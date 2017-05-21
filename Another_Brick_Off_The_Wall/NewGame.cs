@@ -11,6 +11,7 @@ namespace Another_Brick_Off_The_Wall
 {
     public partial class NewGame : Form
     {
+       
         public NewGame()
         {
             InitializeComponent();
