@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Another_Brick_Off_The_Wall
 {
-    class Level3 : Level
+    public class Level3 : Level
     {
+        public Level3()
+        {
+            BallSpeed = BallSpeeds.FAST;
+            SliderLength = SliderLengths.SMALL;
+        }
     }
 }

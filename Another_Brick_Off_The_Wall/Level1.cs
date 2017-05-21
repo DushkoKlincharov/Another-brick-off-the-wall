@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Another_Brick_Off_The_Wall
 {
-    class Level1 : Level
+    public class Level1 : Level
     {
         public Level1()
         {
