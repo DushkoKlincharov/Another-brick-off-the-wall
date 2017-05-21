@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigTile.cs" />
+    <Compile Include="Ball.cs" />
     <Compile Include="ExitForm.cs">
       <SubType>Form</SubType>
     </Compile>
