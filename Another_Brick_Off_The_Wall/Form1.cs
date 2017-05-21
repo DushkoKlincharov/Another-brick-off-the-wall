@@ -68,7 +68,7 @@ namespace Another_Brick_Off_The_Wall
             else
                 level = new Level3();
 
-            GameForm gf = new GameForm(level);
+            NewGame gf = new NewGame(level);
 
             this.Hide();
             this.AddOwnedForm(gf);
