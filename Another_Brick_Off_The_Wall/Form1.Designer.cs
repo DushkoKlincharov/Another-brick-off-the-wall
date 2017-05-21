@@ -64,6 +64,7 @@
             this.btnHighScores.TabIndex = 2;
             this.btnHighScores.Text = "High scores";
             this.btnHighScores.UseVisualStyleBackColor = true;
+            this.btnHighScores.Click += new System.EventHandler(this.btnHighScores_Click);
             // 
             // btnAbout
             // 

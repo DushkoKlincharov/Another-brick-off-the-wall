@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Another_Brick_Off_The_Wall.Properties;
-// THISSSSS
+
 namespace Another_Brick_Off_The_Wall
 {
     public partial class Form1 : Form
@@ -46,6 +46,15 @@ namespace Another_Brick_Off_The_Wall
             ef.ShowDialog();
             if (ef.Exit)
                 this.Close();
+            this.RemoveOwnedForm(ef);
+        }
+
+        private void btnHighScores_Click(object sender, EventArgs e)
+        {
+            HighScoresForm shf = new HighScoresForm();
+            this.AddOwnedForm(shf);
+            shf.ShowDialog();
+            this.RemoveOwnedForm(shf);
         }
 
 
