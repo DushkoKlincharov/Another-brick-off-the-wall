@@ -39,6 +39,7 @@
             this.pbNewGame.Size = new System.Drawing.Size(800, 520);
             this.pbNewGame.TabIndex = 0;
             this.pbNewGame.TabStop = false;
+            
             // 
             // NewGame
             // 

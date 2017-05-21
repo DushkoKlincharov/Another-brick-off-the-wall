@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using Another_Brick_Off_The_Wall.Properties;
 
 namespace Another_Brick_Off_The_Wall
 {
@@ -19,12 +20,28 @@ namespace Another_Brick_Off_The_Wall
         // Image for the slider 
         public Image Image { get; set; }
 
-        /*public Slider(SliderLenghts)
+        public Slider(Level.SliderLengths sl)
         {
-            X = x;
-            Y = y;
-            Width = width;
-        }*/
+            Width = Convert.ToInt32(sl);
+            X = (Scene.WIDTH / 2) - Width / 2;
+            Y = Scene.HEIGHT - 4 * Scene.UNIT;
+
+            if (sl == Level.SliderLengths.SMALL) Image = Resources.smallSlider;
+            else if (sl == Level.SliderLengths.MEDIUM) Image = Resources.MediumSlider;
+            else Image = Resources.BigSlider;
+        }
+
+        public void Draw(Graphics g)
+        {
+            g.DrawImage(Image, new Rectangle((int)X, (int)Y, Width,HEIGHT));
+        }
+
+        public void Move(int dx)
+        {
+            X += dx;
+            if (X <= 0) X = 0;
+            if (X + Width >= Scene.WIDTH) X = Scene.WIDTH - Width;
+        }
 
 
 
