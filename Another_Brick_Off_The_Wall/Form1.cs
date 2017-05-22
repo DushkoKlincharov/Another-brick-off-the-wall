@@ -168,5 +168,38 @@ namespace Another_Brick_Off_The_Wall
         {
             this.RadioButtonMouseLeave(radioBtnHard);
         }
+
+        private void ResizeLabels()
+        {
+            lblTitle.SetBounds((int)(this.Width * 0.5) - lblTitle.Width / 2, (int)(this.Height * 0.1), (int)(this.Width * 0.9), (int)(this.Height * 0.9));
+
+            lblNewGame.SetBounds(this.Width / 2 - lblNewGame.Width / 2, (int)(this.Height * 0.3),
+                lblNewGame.Width, lblNewGame.Height);
+
+            lblContinueLastGame.SetBounds(this.Width / 2 - lblContinueLastGame.Width / 2, (int)(this.Height * 0.5),
+                lblContinueLastGame.Width, lblContinueLastGame.Height);
+
+            lblHighScores.SetBounds(this.Width / 2 - lblHighScores.Width / 2, (int)(this.Height * 0.6),
+                lblHighScores.Width, lblHighScores.Height);
+
+            lblAbout.SetBounds(this.Width / 2 - lblAbout.Width / 2, (int)(this.Height * 0.7),
+                lblAbout.Width, lblAbout.Height);
+
+            lblExit.SetBounds(this.Width / 2 - lblExit.Width / 2, (int)(this.Height * 0.8),
+                lblExit.Width, lblExit.Height);
+        }
+
+        private void ResizeRadioButtons()
+        {
+            radioBtnEasy.SetBounds(lblContinueLastGame.Location.X, (int)(this.Height * 0.4), radioBtnEasy.Width, radioBtnEasy.Height);
+            radioBtnMedium.SetBounds(lblContinueLastGame.Location.X + radioBtnEasy.Width, (int)(this.Height * 0.4), radioBtnMedium.Width, radioBtnMedium.Height);
+            radioBtnHard.SetBounds(lblContinueLastGame.Location.X + radioBtnEasy.Width + radioBtnMedium.Width, (int)(this.Height * 0.4), radioBtnHard.Width, radioBtnHard.Height);
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            this.ResizeLabels();
+            this.ResizeRadioButtons();
+        }
     }
 }

@@ -19,16 +19,40 @@ namespace Another_Brick_Off_The_Wall
             InitializeComponent();
         }
 
-        private void btnYES_Click(object sender, EventArgs e)
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+            Exit = false;
+            this.Close();
+        }
+
+        private void lblYes_Click(object sender, EventArgs e)
         {
             Exit = true;
             this.Close();
         }
 
-        private void btnNO_Click(object sender, EventArgs e)
+        private void lblNo_MouseMove(object sender, MouseEventArgs e)
         {
-            Exit = false;
-            this.Close();
+            lblNo.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblNo_MouseLeave(object sender, EventArgs e)
+        {
+            lblNo.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lblYes_MouseLeave(object sender, EventArgs e)
+        {
+            lblYes.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lblYes_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblYes.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
         }
     }
 }

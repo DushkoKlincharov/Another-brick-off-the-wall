@@ -75,6 +75,7 @@
             this.Controls.Add(this.lblCountdown);
             this.Controls.Add(this.pbNewGame);
             this.Name = "NewGame";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ANOTHER BRICK OFF THE WALL";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewGame_KeyDown);

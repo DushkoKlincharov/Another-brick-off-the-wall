@@ -28,7 +28,6 @@ namespace Another_Brick_Off_The_Wall
             tiles = level.getTiles();
             slider = new Slider(Level.SliderLengths.LARGE);
 
-            lblCountdown.Location = new Point(pbNewGame.Width / 2+19, pbNewGame.Height / 2);
             countdown = 3;
             //DoubleBuffered = true;
             //this.BackgroundImage = Resources.newGame_window_background;
@@ -36,6 +35,8 @@ namespace Another_Brick_Off_The_Wall
 
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
+            pbNewGame.SetBounds(this.Width / 2 - pbNewGame.Width / 2, this.Height / 2 - pbNewGame.Height / 2, pbNewGame.Width, pbNewGame.Height);
+            lblCountdown.Location = new Point(this.Width / 2, this.Height / 2);
             e.Graphics.Clear(Color.SlateGray);
             Draw(e.Graphics);
             ball.Draw(e.Graphics);
