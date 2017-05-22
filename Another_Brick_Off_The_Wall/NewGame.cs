@@ -13,7 +13,8 @@ namespace Another_Brick_Off_The_Wall
     public partial class NewGame : Form
     {
         public Scene Scene { get; set; }
-
+        public Level Level { get; set; }
+        public PictureBox PictureBox { get; set; }
         private Ball ball;
         private Slider slider;
         List<Tile> tiles;
@@ -26,9 +27,11 @@ namespace Another_Brick_Off_The_Wall
         public NewGame(Level level)
         {
             InitializeComponent();
-
-            ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
+            Level = level;
+            PictureBox = pbNewGame;
+            Scene = new Scene(Level, PictureBox);
             
+            ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
             level = new Level3();
             tiles = level.getTiles();
             slider = new Slider(Level.SliderLengths.LARGE);
@@ -44,33 +47,21 @@ namespace Another_Brick_Off_The_Wall
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
 
-          //  e.Graphics.Clear(Color.SlateGray);
-            Draw(e.Graphics);
-            ball.Draw(e.Graphics);
            // lblCountdown.BackColor = Color.SlateGray;
             lblCountdown.Text = countdown.ToString();
-            reward.Draw(e.Graphics);
-        }
-
-        public void Draw(Graphics g)
-        {
-            foreach (Tile t in tiles)
-            {
-                t.Draw(g);
-            }
-            slider.Draw(g);
-        }        
+            Scene.Draw(e.Graphics);
+        }   
 
         private void timerForBall_Tick(object sender, EventArgs e)
         {
-            ball.Move();
-            ball.SliderCollider(slider);
-            reward.Move(slider);
+            Scene.Ball.Move();
+            Scene.Ball.SliderCollider(slider);
+            /*reward.Move(slider);
             if (slider.touchReward(reward))
             {
                 reward.X = 0;
                 reward.Y = 0;
-            }
+            }*/
             Invalidate(true);
         }
 
@@ -96,11 +87,11 @@ namespace Another_Brick_Off_The_Wall
         {
             if (e.KeyCode == Keys.Left)
             {
-                Scene.MoveRightSlider = true;
+                Scene.MoveLeftSlider = true;
             }
             else if (e.KeyCode == Keys.Right)
             {
-                Scene.MoveLeftSlider = true;
+                Scene.MoveRightSlider = true;
             }
         }
 
@@ -112,7 +103,7 @@ namespace Another_Brick_Off_The_Wall
 
         private void timerSlider_Tick(object sender, EventArgs e)
         {
-            //Scene.MoveSlider();
+            Scene.MoveSlider();
             Invalidate(true);
         }
 

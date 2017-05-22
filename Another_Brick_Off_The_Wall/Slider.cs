@@ -49,10 +49,10 @@ namespace Another_Brick_Off_The_Wall
                 (rwd.X + Reward.SIDE > X && rwd.X + Reward.SIDE < X + Width)));
         }
 
-        /*public void changeSlider(Rewards rwd)
+        public void ChangeLength(int dx)
         {
-            
-        }*/
+            Width += dx;
+        }
 
     }
 }
