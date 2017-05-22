@@ -6,14 +6,14 @@ using System.Drawing;
 
 namespace Another_Brick_Off_The_Wall
 {
+    public enum Rewards
+    {
+        BIGGER_SLIDER, SMALLER_SLIDER, FASTER_SPEED,
+        SLOWER_SPEED, LIFE
+    } 
+
     public class Reward
     {
-        public enum Rewards
-        {
-            BIGGER_SLIDER, SMALLER_SLIDER, FASTER_SPEED,
-            SLOWER_SPEED, LIFE
-        } 
-
         // upper-left point of the reward
         public float X { get; set; }
         public float Y { get; set; }
@@ -58,7 +58,7 @@ namespace Another_Brick_Off_The_Wall
         {
             Y += 1;
 
-            if (Y >= slider.Y)
+            if (Y + SIDE >= slider.Y)
                 forDelete = true;
         }
 

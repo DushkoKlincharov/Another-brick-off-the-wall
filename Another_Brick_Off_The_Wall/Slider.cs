@@ -43,10 +43,15 @@ namespace Another_Brick_Off_The_Wall
             if (X + Width >= Scene.WIDTH) X = Scene.WIDTH - Width;
         }
 
-        /*public bool touchReward(Reward rwd)
+        public bool touchReward(Reward rwd)
         {
-            //
+            return ((rwd.Y + Reward.SIDE > Y) && ((rwd.X > X && rwd.X < X + Width) ||
+                (rwd.X + Reward.SIDE > X && rwd.X + Reward.SIDE < X + Width)));
+        }
 
+        /*public void changeSlider(Rewards rwd)
+        {
+            
         }*/
 
     }
