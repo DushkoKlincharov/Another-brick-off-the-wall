@@ -42,13 +42,14 @@
             // 
             // btnNewGame
             // 
+            this.btnNewGame.BackColor = System.Drawing.Color.Transparent;
             this.btnNewGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.Location = new System.Drawing.Point(186, 28);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(154, 47);
             this.btnNewGame.TabIndex = 0;
             this.btnNewGame.Text = "New game";
-            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // btnContinueLastGame

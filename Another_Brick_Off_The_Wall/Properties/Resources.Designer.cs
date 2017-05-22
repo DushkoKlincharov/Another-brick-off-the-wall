@@ -93,9 +93,9 @@ namespace Another_Brick_Off_The_Wall.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MediumTile {
+        internal static System.Drawing.Bitmap MediumTile__1_ {
             get {
-                object obj = ResourceManager.GetObject("MediumTile", resourceCulture);
+                object obj = ResourceManager.GetObject("MediumTile__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

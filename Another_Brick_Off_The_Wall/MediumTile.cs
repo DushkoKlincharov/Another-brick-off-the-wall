@@ -15,7 +15,7 @@ namespace Another_Brick_Off_The_Wall
             X = x;
             Y = y;
             Width = (int)TileLenghts.MEDIUM;
-            Image = Resources.MediumTile;
+            Image = Resources.MediumTile__1_;
         }
 
         public override void Draw(Graphics g)
