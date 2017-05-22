@@ -17,6 +17,9 @@ namespace Another_Brick_Off_The_Wall
         List<Tile> tiles;
         Level level;
         int countdown;
+        Reward reward;
+        bool left;
+        bool right;
 
         public NewGame(Level level)
         {
@@ -24,24 +27,32 @@ namespace Another_Brick_Off_The_Wall
 
             ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
             
-            level = new Level1();
+            level = new Level3();
             tiles = level.getTiles();
             slider = new Slider(Level.SliderLengths.LARGE);
+            //reward = new Reward(100,100,true);
+            reward = new Reward(0,0,false);
+            left = right = false;
 
             countdown = 3;
-            //DoubleBuffered = true;
-            //this.BackgroundImage = Resources.newGame_window_background;
+            DoubleBuffered = true;
+            this.BackgroundImage = Resources.newGame_window_background;
         }
 
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
+<<<<<<< HEAD
             pbNewGame.SetBounds(this.Width / 2 - pbNewGame.Width / 2, this.Height / 2 - pbNewGame.Height / 2, pbNewGame.Width, pbNewGame.Height);
             lblCountdown.Location = new Point(this.Width / 2, this.Height / 2);
             e.Graphics.Clear(Color.SlateGray);
+=======
+          //  e.Graphics.Clear(Color.SlateGray);
+>>>>>>> Added class Reward
             Draw(e.Graphics);
             ball.Draw(e.Graphics);
-            lblCountdown.BackColor = Color.SlateGray;
+           // lblCountdown.BackColor = Color.SlateGray;
             lblCountdown.Text = countdown.ToString();
+            reward.Draw(e.Graphics);
         }
 
         public void Draw(Graphics g)
@@ -53,18 +64,24 @@ namespace Another_Brick_Off_The_Wall
             slider.Draw(g);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Invalidate(true);
-        }
 
         private void NewGame_KeyDown(object sender, KeyEventArgs e)
         {
+            //timerSlider.Enabled = true;
             if (e.KeyCode == Keys.Left)
-                slider.Move(-10);
+            {
+                left = true;
+                //timerSlider.Start();
+                //slider.Move(-10);
+            }
             else if (e.KeyCode == Keys.Right)
-                slider.Move(10);
-            Invalidate(true);
+            {
+                right = true;
+                //timerSlider.Start();
+                //slider.Move(10);
+            }
+           // timerSlider.Stop();
+               // Invalidate(true);
         }
 
         
@@ -73,6 +90,7 @@ namespace Another_Brick_Off_The_Wall
         {
             ball.Move();
             ball.SliderCollider(slider);
+            reward.Move(slider);
             Invalidate(true);
         }
 
@@ -90,6 +108,20 @@ namespace Another_Brick_Off_The_Wall
 
             }
             Invalidate(true);
+        }
+
+        private void timerSlider_Tick(object sender, EventArgs e)
+        {
+            if (left)
+                slider.Move(-8);
+            if (right)
+                slider.Move(8);
+            Invalidate(true);
+        }
+
+        private void NewGame_KeyUp(object sender, KeyEventArgs e)
+        {
+            right = left = false;
         }
 
         

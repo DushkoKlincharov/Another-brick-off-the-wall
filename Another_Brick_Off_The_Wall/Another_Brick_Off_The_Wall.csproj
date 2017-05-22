@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reward.cs" />
     <Compile Include="Scene.cs" />
     <Compile Include="Slider.cs" />
     <Compile Include="SmallTile.cs" />
