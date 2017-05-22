@@ -73,9 +73,29 @@ namespace Another_Brick_Off_The_Wall.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BigTile {
+            get {
+                object obj = ResourceManager.GetObject("BigTile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MediumSlider {
             get {
                 object obj = ResourceManager.GetObject("MediumSlider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MediumTile {
+            get {
+                object obj = ResourceManager.GetObject("MediumTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,16 @@ namespace Another_Brick_Off_The_Wall.Properties {
         internal static System.Drawing.Bitmap smallSlider {
             get {
                 object obj = ResourceManager.GetObject("smallSlider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SmallTile {
+            get {
+                object obj = ResourceManager.GetObject("SmallTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

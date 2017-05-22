@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BigTile.cs" />
     <Compile Include="ExitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +69,7 @@
     <Compile Include="Level1.cs" />
     <Compile Include="Level2.cs" />
     <Compile Include="Level3.cs" />
+    <Compile Include="MediumTile.cs" />
     <Compile Include="NewGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +80,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene.cs" />
     <Compile Include="Slider.cs" />
+    <Compile Include="SmallTile.cs" />
+    <Compile Include="Tile.cs" />
     <EmbeddedResource Include="ExitForm.resx">
       <DependentUpon>ExitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\smallSlider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MediumTile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallTile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
