@@ -8,7 +8,7 @@ namespace Another_Brick_Off_The_Wall
 {
     public abstract class Tile
     {
-        public enum TileLenghts { SMALL = 80, MEDIUM = 100, BIG = 130 }
+        public enum TileLenghts { SMALL = 80, MEDIUM = 100, BIG = 130, FINKI =50 }
 
         // Upper-left point of the tile
         public float X { get; set; }

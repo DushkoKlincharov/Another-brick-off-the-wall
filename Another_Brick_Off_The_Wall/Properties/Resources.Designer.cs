@@ -83,6 +83,16 @@ namespace Another_Brick_Off_The_Wall.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FinkiTile {
+            get {
+                object obj = ResourceManager.GetObject("FinkiTile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MediumSlider {
             get {
                 object obj = ResourceManager.GetObject("MediumSlider", resourceCulture);
