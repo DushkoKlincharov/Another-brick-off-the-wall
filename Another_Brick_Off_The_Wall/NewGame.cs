@@ -30,86 +30,30 @@ namespace Another_Brick_Off_The_Wall
             Level = level;
             PictureBox = pbNewGame;
             Scene = new Scene(Level, PictureBox);
-            
-<<<<<<< HEAD
+
             ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
-=======
->>>>>>> Colliding with tiles
             level = new Level3();
             tiles = level.getTiles();
             slider = new Slider(Level.SliderLengths.LARGE);
-            reward = new Reward(100,100,true);
+            reward = new Reward(100, 100, true);
             //reward = new Reward(0,0,false);
             left = right = false;
 
             countdown = 3;
             DoubleBuffered = true;
-<<<<<<< HEAD
             this.BackgroundImage = Resources.newGame_window_background;
-=======
-            
->>>>>>> Colliding with tiles
         }
 
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
-<<<<<<< HEAD
-=======
-            pbNewGame.SetBounds(this.Width / 2 - pbNewGame.Width / 2, this.Height / 2 - pbNewGame.Height / 2, pbNewGame.Width, pbNewGame.Height);
-            lblCountdown.Location = new Point(this.Width / 2, this.Height / 2);
-            e.Graphics.Clear(Color.SlateGray);
-            Draw(e.Graphics);
-            ball.Draw(e.Graphics);
-            lblCountdown.BackColor = Color.SlateGray;
-            lblCountdown.Text = countdown.ToString();
-            
-        }
 
-        private void CheckForCollision()
-        {
-            for (int i = 0; i < tiles.Count; i++)
-            {
-                if(ball.collides(tiles[i]))
-                {
-                    tiles.RemoveAt(i);
-                    break;
-                }
-            }
-            
-        }
-
-        public void Draw(Graphics g)
-        {
-            foreach (Tile t in tiles)
-            {
-                t.Draw(g);
-            }
-            slider.Draw(g);
-        }
-
-        /*private void timer1_Tick(object sender, EventArgs e)
-        {
-            Invalidate(true);
-        }*/
-
-        private void NewGame_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
-                slider.Move(-10);
-            else if (e.KeyCode == Keys.Right)
-                slider.Move(10);
-            Invalidate(true);
-        }
->>>>>>> Colliding with tiles
-
-           // lblCountdown.BackColor = Color.SlateGray;
+            // lblCountdown.BackColor = Color.SlateGray;
             lblCountdown.Text = countdown.ToString();
             Scene.Draw(e.Graphics);
-        }   
+        }
 
         private void timerForBall_Tick(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             Scene.Ball.Move();
             Scene.Ball.SliderCollider(slider);
             /*reward.Move(slider);
@@ -118,11 +62,6 @@ namespace Another_Brick_Off_The_Wall
                 reward.X = 0;
                 reward.Y = 0;
             }*/
-=======
-            ball.Move();
-            ball.SliderCollider(slider);
-            CheckForCollision();
->>>>>>> Colliding with tiles
             Invalidate(true);
         }
 
@@ -144,7 +83,6 @@ namespace Another_Brick_Off_The_Wall
 
         // Slider moving methods
 
-<<<<<<< HEAD
         private void NewGame_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -170,19 +108,15 @@ namespace Another_Brick_Off_The_Wall
         }
 
 
-=======
->>>>>>> Colliding with tiles
-        
 
 
 
-        
 
-        
 
-        
 
-        
+
+
+
 
     }
 }

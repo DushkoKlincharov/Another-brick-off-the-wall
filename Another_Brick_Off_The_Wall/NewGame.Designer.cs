@@ -49,7 +49,7 @@
             // 
             // timerForBall
             // 
-            this.timerForBall.Interval = 3;
+            this.timerForBall.Interval = 300;
             this.timerForBall.Tick += new System.EventHandler(this.timerForBall_Tick);
             // 
             // timerCountdown
