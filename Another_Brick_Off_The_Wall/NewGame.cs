@@ -16,7 +16,7 @@ namespace Another_Brick_Off_The_Wall
         private Slider slider;
         List<Tile> tiles;
         Level level;
-	
+        int countdown;
 
         public NewGame(Level level)
         {
@@ -28,6 +28,8 @@ namespace Another_Brick_Off_The_Wall
             tiles = level.getTiles();
             slider = new Slider(Level.SliderLengths.LARGE);
 
+            lblCountdown.Location = new Point(pbNewGame.Width / 2+19, pbNewGame.Height / 2);
+            countdown = 3;
             //DoubleBuffered = true;
             //this.BackgroundImage = Resources.newGame_window_background;
         }
@@ -37,6 +39,8 @@ namespace Another_Brick_Off_The_Wall
             e.Graphics.Clear(Color.SlateGray);
             Draw(e.Graphics);
             ball.Draw(e.Graphics);
+            lblCountdown.BackColor = Color.SlateGray;
+            lblCountdown.Text = countdown.ToString();
         }
 
         public void Draw(Graphics g)
@@ -67,8 +71,27 @@ namespace Another_Brick_Off_The_Wall
         private void timerForBall_Tick(object sender, EventArgs e)
         {
             ball.Move();
+            ball.SliderCollider(slider);
             Invalidate(true);
         }
+
+        private void timerCountdown_Tick(object sender, EventArgs e)
+        {
+            if (countdown == 0)
+            {
+                timerCountdown.Stop();
+                lblCountdown.Hide();
+                timerForBall.Start();
+            }
+            else
+            {
+                countdown--;
+
+            }
+            Invalidate(true);
+        }
+
+        
 
         /*private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {

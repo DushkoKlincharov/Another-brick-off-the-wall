@@ -15,8 +15,8 @@ namespace Another_Brick_Off_The_Wall
         private static float Radius = 10;
         public static PictureBox Bounder;
 
-        public float X { get; set; }
-        public float Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         public int Speed { get; set; }
         public float Angle { get; set; }
 
@@ -25,10 +25,10 @@ namespace Another_Brick_Off_The_Wall
         public Ball(PictureBox bounder, Level.BallSpeeds speed)
         {
             Bounder = bounder;
-            X = bounder.Width / 2 - Radius;  // upper-left
-            Y = bounder.Height - 100;
+            X = (int)(bounder.Width / 2 - Radius);  // upper-left
+            Y = bounder.Height - 200;
             Speed = (int)speed;
-            Angle = (float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
+            Angle = (float)(-Math.PI * 1 / 4 - firstDirection.NextDouble() * Math.PI * 1 / 2);
             SpeedX = (float)Math.Cos(Angle) * Speed;
             SpeedY = (float)Math.Sin(Angle) * Speed;
         }
@@ -49,17 +49,17 @@ namespace Another_Brick_Off_The_Wall
             {
                 SpeedX = -SpeedX;
             }
-            if (nextY <= Bounder.Top-20 || nextY + Radius * 2 >= Scene.HEIGHT)
+            if (nextY <= 0 || nextY + Radius * 2 >= Scene.HEIGHT)
             {
                 SpeedY = -SpeedY;
             }
-            X += SpeedX;
-            Y += SpeedY;
+            X += (int)SpeedX;
+            Y += (int)SpeedY;
         }
 
         public bool SliderCollider(Slider slider)
         {
-            if (Y + Radius * 2 == slider.Y && slider.X < X + Radius && X + Radius < slider.X + slider.Width ) // if they touch
+            if (Y + Radius * 2 == slider.Y && slider.X < X + Radius && X + Radius < slider.X + slider.Width) // if they touch
             {
                 SpeedY = -SpeedY;
                 return true;
