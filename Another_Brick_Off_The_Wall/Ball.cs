@@ -72,5 +72,74 @@ namespace Another_Brick_Off_The_Wall
         {
             return Y + Radius * 2 > slider.Y;
         }
+
+        internal bool collides(Tile tile)
+        {
+
+            if (collideUp(tile) || collideDown(tile))
+            {
+                SpeedY = -SpeedY;
+                return true;
+            }
+            if (collideLeft(tile) || collideRight(tile))
+            {
+                SpeedX = -SpeedX;
+                return true;
+            }
+            /*if (collideDownLeft(tile) || collideDownRight(tile) || collideUpLeft(tile) || collideUpRight(tile))
+            {
+                SpeedX = -SpeedX;
+                SpeedY = -SpeedY;
+                return true;
+            }*/
+
+            
+            return false;
+        }
+        private static int d = 0;
+        private bool collideLeft(Tile tile)
+        {
+            return X + Radius * 2 == tile.X && tile.Y + d <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT - d;
+        }
+
+        private bool collideUpLeft(Tile tile)
+        {
+            return (X + Radius * 2 == tile.X && tile.Y - d <= Y + Radius && Y + Radius <= tile.Y + d)
+                || (Y + Radius * 2 == tile.Y && tile.X - d <= X + Radius && X + Radius <= tile.X + d);
+        }
+
+        private bool collideUpRight(Tile tile)
+        {
+            return (X == tile.X + tile.Width && tile.Y - d <= Y + Radius && Y + Radius <= tile.Y + d)
+                || (Y + Radius * 2 == tile.Y && tile.X + tile.Width - d <= X + Radius && X + Radius <= tile.X + tile.Width + d);
+        }
+
+        private bool collideDownRight(Tile tile)
+        {
+            return (Y == tile.Y + Tile.HEIGHT && tile.X + tile.Width - d <= X + Radius && X + Radius <= tile.X + tile.Width + d)
+                || (X == tile.X + tile.Width && tile.Y + Tile.HEIGHT - d <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT + d);
+        }
+
+        private bool collideDownLeft(Tile tile)
+        {
+            return (Y == tile.Y + Tile.HEIGHT && tile.X - d <= X + Radius && X + Radius <= tile.X + d)
+                || (X + Radius * 2 == tile.X && tile.Y + Tile.HEIGHT - d <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT + d);
+
+        }
+
+        private bool collideRight(Tile tile)
+        {
+            return X == tile.X + tile.Width && tile.Y + 5 <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT - 5;
+        }
+
+        private bool collideDown(Tile tile)
+        {
+            return Y == tile.Y + Tile.HEIGHT && tile.X + 5 <= X + Radius && X + Radius <= tile.X + tile.Width - 5;
+        }
+
+        private bool collideUp(Tile tile)
+        {
+            return Y + Radius * 2 == tile.Y && tile.X + 5 <= X + Radius && X + Radius <= tile.X + tile.Width - 5;
+        }
     }
 }
