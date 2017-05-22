@@ -12,7 +12,7 @@ namespace Another_Brick_Off_The_Wall
     {
         private static Random firstDirection = new Random();
         private static Color BallColor = Color.Red;
-        private static float Radius = 20;
+        private static float Radius = 10;
         public static PictureBox Bounder;
 
         public float X { get; set; }

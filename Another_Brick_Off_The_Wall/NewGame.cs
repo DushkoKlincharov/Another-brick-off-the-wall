@@ -12,7 +12,7 @@ namespace Another_Brick_Off_The_Wall
 {
     public partial class NewGame : Form
     {
-        //private Ball ball;
+        private Ball ball;
         private Slider slider;
         List<Tile> tiles;
         Level level;
@@ -22,7 +22,7 @@ namespace Another_Brick_Off_The_Wall
         {
             InitializeComponent();
 
-            //ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
+            ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
             
             level = new Level1();
             tiles = level.getTiles();
@@ -36,6 +36,7 @@ namespace Another_Brick_Off_The_Wall
         {
             e.Graphics.Clear(Color.SlateGray);
             Draw(e.Graphics);
+            ball.Draw(e.Graphics);
         }
 
         public void Draw(Graphics g)
@@ -65,15 +66,15 @@ namespace Another_Brick_Off_The_Wall
 
         private void timerForBall_Tick(object sender, EventArgs e)
         {
-            /*ball.Move();
-            Invalidate(true);*/
+            ball.Move();
+            Invalidate(true);
         }
 
-        private void pbNewGame_Paint(object sender, PaintEventArgs e)
+        /*private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
             /*e.Graphics.Clear(Color.White);
             ball.Draw(e.Graphics);*/
-        }
+        //}
 
         
 
