@@ -28,158 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNewGame = new System.Windows.Forms.Button();
-            this.btnContinueLastGame = new System.Windows.Forms.Button();
-            this.btnHighScores = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.lblNewGame = new System.Windows.Forms.Label();
+            this.lblContinueLastGame = new System.Windows.Forms.Label();
+            this.lblHighScores = new System.Windows.Forms.Label();
+            this.lblAbout = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
             this.radioBtnEasy = new System.Windows.Forms.RadioButton();
             this.radioBtnMedium = new System.Windows.Forms.RadioButton();
             this.radioBtnHard = new System.Windows.Forms.RadioButton();
-            this.groupBoxRadioBtns = new System.Windows.Forms.GroupBox();
-            this.groupBoxRadioBtns.SuspendLayout();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnNewGame
+            // lblNewGame
             // 
-            this.btnNewGame.BackColor = System.Drawing.Color.Transparent;
-            this.btnNewGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(186, 28);
-            this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(154, 47);
-            this.btnNewGame.TabIndex = 0;
-            this.btnNewGame.Text = "New game";
-            this.btnNewGame.UseVisualStyleBackColor = false;
-            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
+            this.lblNewGame.AutoSize = true;
+            this.lblNewGame.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewGame.ForeColor = System.Drawing.Color.White;
+            this.lblNewGame.Location = new System.Drawing.Point(300, 240);
+            this.lblNewGame.Name = "lblNewGame";
+            this.lblNewGame.Size = new System.Drawing.Size(131, 36);
+            this.lblNewGame.TabIndex = 9;
+            this.lblNewGame.Text = "New Game";
+            this.lblNewGame.Click += new System.EventHandler(this.lblNewGame_Click);
+            this.lblNewGame.MouseLeave += new System.EventHandler(this.lblNewGame_MouseLeave);
+            this.lblNewGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblNewGame_MouseMove);
             // 
-            // btnContinueLastGame
+            // lblContinueLastGame
             // 
-            this.btnContinueLastGame.AutoEllipsis = true;
-            this.btnContinueLastGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnContinueLastGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinueLastGame.Location = new System.Drawing.Point(186, 153);
-            this.btnContinueLastGame.Name = "btnContinueLastGame";
-            this.btnContinueLastGame.Size = new System.Drawing.Size(154, 47);
-            this.btnContinueLastGame.TabIndex = 1;
-            this.btnContinueLastGame.Text = "Continue last game";
-            this.btnContinueLastGame.UseVisualStyleBackColor = false;
+            this.lblContinueLastGame.AutoSize = true;
+            this.lblContinueLastGame.BackColor = System.Drawing.Color.Transparent;
+            this.lblContinueLastGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContinueLastGame.ForeColor = System.Drawing.Color.White;
+            this.lblContinueLastGame.Location = new System.Drawing.Point(300, 340);
+            this.lblContinueLastGame.Name = "lblContinueLastGame";
+            this.lblContinueLastGame.Size = new System.Drawing.Size(231, 36);
+            this.lblContinueLastGame.TabIndex = 10;
+            this.lblContinueLastGame.Text = "Continue Last Game";
+            this.lblContinueLastGame.MouseLeave += new System.EventHandler(this.lblContinueLastGame_MouseLeave);
+            this.lblContinueLastGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblContinueLastGame_MouseMove);
             // 
-            // btnHighScores
+            // lblHighScores
             // 
-            this.btnHighScores.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHighScores.Location = new System.Drawing.Point(186, 206);
-            this.btnHighScores.Name = "btnHighScores";
-            this.btnHighScores.Size = new System.Drawing.Size(154, 47);
-            this.btnHighScores.TabIndex = 2;
-            this.btnHighScores.Text = "High scores";
-            this.btnHighScores.UseVisualStyleBackColor = true;
-            this.btnHighScores.Click += new System.EventHandler(this.btnHighScores_Click);
+            this.lblHighScores.AutoSize = true;
+            this.lblHighScores.BackColor = System.Drawing.Color.Transparent;
+            this.lblHighScores.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighScores.ForeColor = System.Drawing.Color.White;
+            this.lblHighScores.Location = new System.Drawing.Point(300, 390);
+            this.lblHighScores.Name = "lblHighScores";
+            this.lblHighScores.Size = new System.Drawing.Size(138, 36);
+            this.lblHighScores.TabIndex = 11;
+            this.lblHighScores.Text = "High Scores";
+            this.lblHighScores.Click += new System.EventHandler(this.lblHighScores_Click);
+            this.lblHighScores.MouseLeave += new System.EventHandler(this.lblHighScores_MouseLeave);
+            this.lblHighScores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblHighScores_MouseMove);
             // 
-            // btnAbout
+            // lblAbout
             // 
-            this.btnAbout.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbout.Location = new System.Drawing.Point(186, 259);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(154, 47);
-            this.btnAbout.TabIndex = 3;
-            this.btnAbout.Text = "About";
-            this.btnAbout.UseVisualStyleBackColor = true;
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.BackColor = System.Drawing.Color.Transparent;
+            this.lblAbout.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.ForeColor = System.Drawing.Color.White;
+            this.lblAbout.Location = new System.Drawing.Point(300, 440);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(78, 36);
+            this.lblAbout.TabIndex = 12;
+            this.lblAbout.Text = "About";
+            this.lblAbout.MouseLeave += new System.EventHandler(this.lblAbout_MouseLeave);
+            this.lblAbout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblAbout_MouseMove);
             // 
-            // btnExit
+            // lblExit
             // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(186, 312);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(154, 47);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.lblExit.AutoSize = true;
+            this.lblExit.BackColor = System.Drawing.Color.Transparent;
+            this.lblExit.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.White;
+            this.lblExit.Location = new System.Drawing.Point(300, 490);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(56, 36);
+            this.lblExit.TabIndex = 13;
+            this.lblExit.Text = "Exit";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            this.lblExit.MouseLeave += new System.EventHandler(this.lblExit_MouseLeave);
+            this.lblExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblExit_MouseMove);
             // 
             // radioBtnEasy
             // 
             this.radioBtnEasy.AutoSize = true;
+            this.radioBtnEasy.BackColor = System.Drawing.Color.Transparent;
+            this.radioBtnEasy.Checked = true;
             this.radioBtnEasy.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnEasy.Location = new System.Drawing.Point(6, 19);
+            this.radioBtnEasy.ForeColor = System.Drawing.Color.White;
+            this.radioBtnEasy.Location = new System.Drawing.Point(300, 290);
             this.radioBtnEasy.Name = "radioBtnEasy";
             this.radioBtnEasy.Size = new System.Drawing.Size(80, 40);
-            this.radioBtnEasy.TabIndex = 5;
+            this.radioBtnEasy.TabIndex = 14;
             this.radioBtnEasy.TabStop = true;
             this.radioBtnEasy.Text = "Easy";
-            this.radioBtnEasy.UseVisualStyleBackColor = true;
+            this.radioBtnEasy.UseVisualStyleBackColor = false;
+            this.radioBtnEasy.MouseLeave += new System.EventHandler(this.radioBtnEasy_MouseLeave);
+            this.radioBtnEasy.MouseMove += new System.Windows.Forms.MouseEventHandler(this.radioBtnEasy_MouseMove);
             // 
             // radioBtnMedium
             // 
             this.radioBtnMedium.AutoSize = true;
+            this.radioBtnMedium.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnMedium.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnMedium.Location = new System.Drawing.Point(119, 19);
+            this.radioBtnMedium.ForeColor = System.Drawing.Color.White;
+            this.radioBtnMedium.Location = new System.Drawing.Point(390, 290);
             this.radioBtnMedium.Name = "radioBtnMedium";
             this.radioBtnMedium.Size = new System.Drawing.Size(119, 40);
-            this.radioBtnMedium.TabIndex = 6;
-            this.radioBtnMedium.TabStop = true;
+            this.radioBtnMedium.TabIndex = 15;
             this.radioBtnMedium.Text = "Medium";
-            this.radioBtnMedium.UseVisualStyleBackColor = true;
+            this.radioBtnMedium.UseVisualStyleBackColor = false;
+            this.radioBtnMedium.MouseLeave += new System.EventHandler(this.radioBtnMedium_MouseLeave);
+            this.radioBtnMedium.MouseMove += new System.Windows.Forms.MouseEventHandler(this.radioBtnMedium_MouseMove);
             // 
             // radioBtnHard
             // 
             this.radioBtnHard.AutoSize = true;
+            this.radioBtnHard.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnHard.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnHard.Location = new System.Drawing.Point(244, 19);
+            this.radioBtnHard.ForeColor = System.Drawing.Color.White;
+            this.radioBtnHard.Location = new System.Drawing.Point(520, 290);
             this.radioBtnHard.Name = "radioBtnHard";
             this.radioBtnHard.Size = new System.Drawing.Size(87, 40);
-            this.radioBtnHard.TabIndex = 7;
-            this.radioBtnHard.TabStop = true;
+            this.radioBtnHard.TabIndex = 16;
             this.radioBtnHard.Text = "Hard";
-            this.radioBtnHard.UseVisualStyleBackColor = true;
+            this.radioBtnHard.UseVisualStyleBackColor = false;
+            this.radioBtnHard.MouseLeave += new System.EventHandler(this.radioBtnHard_MouseLeave);
+            this.radioBtnHard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.radioBtnHard_MouseMove);
             // 
-            // groupBoxRadioBtns
+            // lblTitle
             // 
-            this.groupBoxRadioBtns.Controls.Add(this.radioBtnEasy);
-            this.groupBoxRadioBtns.Controls.Add(this.radioBtnHard);
-            this.groupBoxRadioBtns.Controls.Add(this.radioBtnMedium);
-            this.groupBoxRadioBtns.Location = new System.Drawing.Point(186, 81);
-            this.groupBoxRadioBtns.Name = "groupBoxRadioBtns";
-            this.groupBoxRadioBtns.Size = new System.Drawing.Size(362, 66);
-            this.groupBoxRadioBtns.TabIndex = 8;
-            this.groupBoxRadioBtns.TabStop = false;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblTitle.Location = new System.Drawing.Point(103, 68);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(666, 85);
+            this.lblTitle.TabIndex = 17;
+            this.lblTitle.Text = "Another brick off the wall";
             // 
             // Form1
             // 
-            this.AcceptButton = this.btnNewGame;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnExit;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Another_Brick_Off_The_Wall.Properties.Resources.newGame_window_background;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.groupBoxRadioBtns);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnAbout);
-            this.Controls.Add(this.btnHighScores);
-            this.Controls.Add(this.btnContinueLastGame);
-            this.Controls.Add(this.btnNewGame);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.radioBtnHard);
+            this.Controls.Add(this.radioBtnMedium);
+            this.Controls.Add(this.radioBtnEasy);
+            this.Controls.Add(this.lblExit);
+            this.Controls.Add(this.lblAbout);
+            this.Controls.Add(this.lblHighScores);
+            this.Controls.Add(this.lblContinueLastGame);
+            this.Controls.Add(this.lblNewGame);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Brick Breaker";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            this.groupBoxRadioBtns.ResumeLayout(false);
-            this.groupBoxRadioBtns.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Another brick off the wall";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnNewGame;
-        private System.Windows.Forms.Button btnContinueLastGame;
-        private System.Windows.Forms.Button btnHighScores;
-        private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblNewGame;
+        private System.Windows.Forms.Label lblContinueLastGame;
+        private System.Windows.Forms.Label lblHighScores;
+        private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.RadioButton radioBtnEasy;
         private System.Windows.Forms.RadioButton radioBtnMedium;
         private System.Windows.Forms.RadioButton radioBtnHard;
-        private System.Windows.Forms.GroupBox groupBoxRadioBtns;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 

@@ -6,60 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Another_Brick_Off_The_Wall.Properties;
 
 namespace Another_Brick_Off_The_Wall
 {
     public partial class Form1 : Form
     {
-        private Image img;
         private Level level;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
 
         public Form1()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             InitializeComponent();
-
-            this.Width = 900;
-            this.Height = 600;
-
-            radioBtnEasy.Checked = true;
-            img = Resources.newGame_window_background;
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            btnNewGame.SetBounds(this.Width / 2 - 150, this.Height - 500, 325, 65);
-
-            groupBoxRadioBtns.SetBounds(this.Width / 2 - 150, this.Height - 425, 325, 65);
-
-            btnContinueLastGame.SetBounds(this.Width / 2 - 150, this.Height - 345, 325, 65);
-            btnHighScores.SetBounds(this.Width / 2 - 150, this.Height - 265, 325, 65);
-            btnAbout.SetBounds(this.Width / 2 - 150, this.Height - 185, 325, 65);
-            btnExit.SetBounds(this.Width / 2 - 150, this.Height - 105, 325, 65);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.BackgroundImage = img;
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            ExitForm ef = new ExitForm();
-            this.AddOwnedForm(ef);
-            ef.ShowDialog();
-            if (ef.Exit)
-                this.Close();
-            this.RemoveOwnedForm(ef);
-        }
-
-        private void btnHighScores_Click(object sender, EventArgs e)
-        {
-            HighScoresForm shf = new HighScoresForm();
-            shf.ShowDialog();
-        }
-
-        private void btnNewGame_Click(object sender, EventArgs e)
+        private void lblNewGame_Click(object sender, EventArgs e)
         {
             if (radioBtnEasy.Checked)
                 level = new Level1();
@@ -68,17 +38,135 @@ namespace Another_Brick_Off_The_Wall
             else
                 level = new Level3();
 
-            NewGame gf = new NewGame(level);
+            NewGame ng = new NewGame(level);
 
+            this.AddOwnedForm(ng);
             this.Hide();
-            this.AddOwnedForm(gf);
-            gf.ShowDialog();
+            ng.ShowDialog();
             this.Show();
-            this.RemoveOwnedForm(gf);
+            this.RemoveOwnedForm(ng);
         }
 
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            ExitForm ef = new ExitForm();
+            this.AddOwnedForm(ef);
+            ef.ShowDialog();
+            this.RemoveOwnedForm(ef);
+            if (ef.Exit)
+                this.Close();
+        }
 
+        private void lblHighScores_Click(object sender, EventArgs e)
+        {
+            HighScoresForm hsf = new HighScoresForm();
+            this.AddOwnedForm(hsf);
+            hsf.ShowDialog();
+            this.RemoveOwnedForm(hsf);
+        }
 
+        private void LabelMouseMove(Label label)
+        {
+            label.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
+        }
 
+        private void LabelMouseLeave(Label label)
+        {
+            label.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lblNewGame_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.LabelMouseMove(lblNewGame);
+        }
+
+        private void lblNewGame_MouseLeave(object sender, EventArgs e)
+        {
+            this.LabelMouseLeave(lblNewGame);
+        }
+
+        private void lblContinueLastGame_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.LabelMouseMove(lblContinueLastGame);
+        }
+
+        private void lblContinueLastGame_MouseLeave(object sender, EventArgs e)
+        {
+            this.LabelMouseLeave(lblContinueLastGame);
+        }
+
+        private void lblHighScores_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.LabelMouseMove(lblHighScores);
+        }
+
+        private void lblHighScores_MouseLeave(object sender, EventArgs e)
+        {
+            this.LabelMouseLeave(lblHighScores);
+        }
+
+        private void lblAbout_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.LabelMouseMove(lblAbout);
+        }
+
+        private void lblAbout_MouseLeave(object sender, EventArgs e)
+        {
+            this.LabelMouseLeave(lblAbout);
+        }
+
+        private void lblExit_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.LabelMouseMove(lblExit);
+        }
+
+        private void lblExit_MouseLeave(object sender, EventArgs e)
+        {
+            this.LabelMouseLeave(lblExit);
+        }
+
+        private void RadioButtonMouseMove(RadioButton radioButton)
+        {
+            radioButton.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void RadioButtonMouseLeave(RadioButton radioButton)
+        {
+            radioButton.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void radioBtnEasy_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.RadioButtonMouseMove(radioBtnEasy);
+        }
+
+        private void radioBtnEasy_MouseLeave(object sender, EventArgs e)
+        {
+            this.RadioButtonMouseLeave(radioBtnEasy);
+        }
+
+        private void radioBtnMedium_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.RadioButtonMouseMove(radioBtnMedium);
+        }
+
+        private void radioBtnMedium_MouseLeave(object sender, EventArgs e)
+        {
+            this.RadioButtonMouseLeave(radioBtnMedium);
+        }
+
+        private void radioBtnHard_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.RadioButtonMouseMove(radioBtnHard);
+        }
+
+        private void radioBtnHard_MouseLeave(object sender, EventArgs e)
+        {
+            this.RadioButtonMouseLeave(radioBtnHard);
+        }
     }
 }

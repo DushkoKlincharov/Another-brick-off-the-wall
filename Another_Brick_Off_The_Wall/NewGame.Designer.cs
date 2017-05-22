@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.pbNewGame);
             this.Name = "NewGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ANOTHER BRICK OFF THE WALL";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NewGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).EndInit();
