@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbNewGame = new System.Windows.Forms.PictureBox();
+            this.timerForBall = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +41,12 @@
             this.pbNewGame.Size = new System.Drawing.Size(800, 520);
             this.pbNewGame.TabIndex = 0;
             this.pbNewGame.TabStop = false;
-            
+            this.pbNewGame.Paint += new System.Windows.Forms.PaintEventHandler(this.pbNewGame_Paint);
+            // 
+            // timerForBall
+            // 
+            this.timerForBall.Enabled = true;
+            this.timerForBall.Tick += new System.EventHandler(this.timerForBall_Tick);
             // 
             // NewGame
             // 
@@ -57,5 +64,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbNewGame;
+        private System.Windows.Forms.Timer timerForBall;
     }
 }

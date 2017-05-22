@@ -12,22 +12,22 @@ namespace Another_Brick_Off_The_Wall
     {
         private static Random firstDirection = new Random();
         private static Color BallColor = Color.Red;
-        private static float Radius = 30;
-        private static PictureBox Bounder;
+        private static float Radius = 20;
+        public static PictureBox Bounder;
 
         public float X { get; set; }
         public float Y { get; set; }
-        public float Speed { get; set; }
+        public int Speed { get; set; }
         public float Angle { get; set; }
 
         private float SpeedX, SpeedY;
 
-        public Ball(PictureBox bounder, float speed)
+        public Ball(PictureBox bounder, Level.BallSpeeds speed)
         {
             Bounder = bounder;
             X = bounder.Width / 2 - Radius;  // upper-left
-            Y = bounder.Height - 50;
-            Speed = speed;
+            Y = bounder.Height - 100;
+            Speed = (int)speed;
             Angle = (float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
             SpeedX = (float)Math.Cos(Angle) * Speed;
             SpeedY = (float)Math.Sin(Angle) * Speed;
@@ -45,16 +45,16 @@ namespace Another_Brick_Off_The_Wall
         {
             float nextX = X + SpeedX;
             float nextY = Y + SpeedY;
-            if (nextX <= Bounder.Left || nextX >= Bounder.Right)
+            if (nextX <= 0 || nextX + Radius * 2 >= Scene.WIDTH)
             {
                 SpeedX = -SpeedX;
             }
-            if (nextY >= Bounder.Bottom)
+            if (nextY <= Bounder.Top-20 || nextY + Radius * 2 >= Scene.HEIGHT)
             {
                 SpeedY = -SpeedY;
             }
-            X += nextX;
-            Y += nextY;
+            X += SpeedX;
+            Y += SpeedY;
         }
 
         public bool SliderCollider(Slider slider)
