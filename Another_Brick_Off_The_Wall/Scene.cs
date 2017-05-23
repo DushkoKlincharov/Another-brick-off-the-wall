@@ -58,7 +58,7 @@ namespace Another_Brick_Off_The_Wall
             Slider.Draw(g); // draw the slider
         }
 
-        // method when the timer ticks in 5 milliseconds
+        // method when the timer ticks in 15 milliseconds
 
         public void TimerTick()
         {
@@ -81,26 +81,27 @@ namespace Another_Brick_Off_The_Wall
             }
            // if (SliderToMove) // every second timer the slider moves if it should
            // {
-                MoveSlider();
+            MoveSlider();
            // }
             /*if (Slider.touchReward(Reward))
             {
                 RewardCounter = 2000;
                 RewardTheUser(Reward.Rwd,true);
             }*/
-            SliderToMove = !SliderToMove; // change the turn of slider whether it should move
+            //SliderToMove = !SliderToMove; // change the turn of slider whether it should move
         }
 
-        private void TilesCollisions()
+        private bool TilesCollisions()
         {
             for (int i = Tiles.Count - 1; i >= 0; i--)
             {
                 if(Ball.collides(Tiles[i]))
                 {
                     Tiles.RemoveAt(i);
-                    break;
+                    return true;
                 }
             }
+            return false;
         }
 
         // method for getting rewards

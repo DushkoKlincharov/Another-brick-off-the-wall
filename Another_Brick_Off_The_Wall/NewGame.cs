@@ -15,14 +15,7 @@ namespace Another_Brick_Off_The_Wall
         public Scene Scene { get; set; }
         public Level Level { get; set; }
         public PictureBox PictureBox { get; set; }
-        private Ball ball;
-        private Slider slider;
-        List<Tile> tiles;
-        Level level;
-        int countdown;
-        Reward reward;
-        bool left;
-        bool right;
+        public int countdown;
 
         public NewGame(Level level)
         {
@@ -30,15 +23,7 @@ namespace Another_Brick_Off_The_Wall
             Level = level;
             PictureBox = pbNewGame;
             Scene = new Scene(Level, PictureBox);
-
-            ball = new Ball(pbNewGame, Level.BallSpeeds.MEDIUM);
-            level = new Level3();
-            tiles = level.getTiles();
-            slider = new Slider(Level.SliderLengths.LARGE);
-            reward = new Reward(100, 100, true);
-            //reward = new Reward(0,0,false);
-            left = right = false;
-
+            lblCountdown.Location = new Point(417, 230);
             countdown = 3;
             DoubleBuffered = true;
             this.BackgroundImage = Resources.newGame_window_background;
@@ -101,12 +86,6 @@ namespace Another_Brick_Off_The_Wall
 
         }
 
-       /* private void timerSlider_Tick(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Hello");
-            Scene.MoveSlider();
-            Invalidate(true);
-        }*/
 
        
 

@@ -141,9 +141,7 @@
   <ItemGroup>
     <None Include="Resources\MediumTile %281%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="C\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\FinkiTile.png" />
   </ItemGroup>

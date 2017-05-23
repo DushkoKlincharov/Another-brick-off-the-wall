@@ -25,8 +25,9 @@ namespace Another_Brick_Off_The_Wall
 
         public Form1()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             InitializeComponent();
+
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
         }
 
         private void lblNewGame_Click(object sender, EventArgs e)

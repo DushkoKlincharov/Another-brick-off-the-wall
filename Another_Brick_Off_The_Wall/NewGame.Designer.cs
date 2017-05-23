@@ -48,7 +48,7 @@
             // 
             // timerForBall
             // 
-            this.timerForBall.Interval = 300;
+            this.timerForBall.Interval = 15;
             this.timerForBall.Tick += new System.EventHandler(this.timerForBall_Tick);
             // 
             // timerCountdown
@@ -63,7 +63,7 @@
             this.lblCountdown.BackColor = System.Drawing.Color.Transparent;
             this.lblCountdown.Font = new System.Drawing.Font("Segoe Print", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountdown.ForeColor = System.Drawing.Color.White;
-            this.lblCountdown.Location = new System.Drawing.Point(378, 227);
+            this.lblCountdown.Location = new System.Drawing.Point(415, 227);
             this.lblCountdown.Name = "lblCountdown";
             this.lblCountdown.Size = new System.Drawing.Size(47, 56);
             this.lblCountdown.TabIndex = 1;

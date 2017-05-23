@@ -10,7 +10,7 @@ namespace Another_Brick_Off_The_Wall
     [Serializable]
     public class Ball
     {
-        private static Random firstDirection = new Random();
+        private Random firstDirection = new Random(); // initial direction of the ball
         private static Color BallColor = Color.Red;
         private static float Radius = 10;
         public static PictureBox Bounder;
@@ -18,20 +18,20 @@ namespace Another_Brick_Off_The_Wall
         public int X { get; set; }
         public int Y { get; set; }
         public int Speed { get; set; }
-        public float Angle { get; set; }
+        public float Angle { get; set; }  // in radians [0-2Pi]
 
         private float SpeedX, SpeedY;
 
-        private static int delta = 5;
-        private static int corner = 7;
+        private static int delta = 4;  // if the distance between two objects is less than delta then they collide
+        private static float corner = 6; // the corner of the tiles part
 
         public Ball(PictureBox bounder, Level.BallSpeeds speed)
         {
             Bounder = bounder;
             X = (int)(bounder.Width / 2 - Radius);  // upper-left
-            Y = bounder.Height - 200;
+            Y = bounder.Height - 250;
             Speed = (int)speed;
-            Angle = (float)(-Math.PI * 1 / 4 - firstDirection.NextDouble() * Math.PI * 1 / 2);
+            Angle = (float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
             SpeedX = (float)Math.Cos(Angle) * Speed;
             SpeedY = (float)Math.Sin(Angle) * Speed;
         }
@@ -140,7 +140,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
             {
-                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner;
+                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner * 2;
             }
             if (Math.Abs(X + Radius * 2 - tile.X) < delta)
             {
@@ -152,7 +152,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
             {
-                return tile.X + corner <= X + Radius && X + Radius <= tile.X + tile.Width - corner;
+                return tile.X + corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width - corner * 2;
             }
             return false;
         }
@@ -160,7 +160,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
             {
-                return tile.X + tile.Width - corner <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
+                return tile.X + tile.Width - corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
             }
             if (Math.Abs(X - tile.X - tile.Width) < delta)
             {
@@ -189,7 +189,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
             {
-                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner;
+                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner * 2;
             }
             if (Math.Abs(X + Radius * 2 - tile.X) < delta)
             {
@@ -201,7 +201,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
             {
-                return tile.X + corner <= X + Radius && X + Radius <= tile.X + tile.Width - corner;
+                return tile.X + corner*2 <= X + Radius && X + Radius <= tile.X + tile.Width - corner * 2;
 
             }
             return false;
@@ -211,7 +211,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
             {
-                return tile.X + tile.Width - corner <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
+                return tile.X + tile.Width - corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
 
             }
             if (Math.Abs(X - tile.X - tile.Width) < delta)
