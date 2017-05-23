@@ -33,7 +33,6 @@
             this.timerForBall = new System.Windows.Forms.Timer(this.components);
             this.timerCountdown = new System.Windows.Forms.Timer(this.components);
             this.lblCountdown = new System.Windows.Forms.Label();
-            this.timerSlider = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +69,6 @@
             this.lblCountdown.TabIndex = 1;
             this.lblCountdown.Text = "3";
             // 
-            // timerSlider
-            // 
-            this.timerSlider.Enabled = true;
-            this.timerSlider.Interval = 10;
-            this.timerSlider.Tick += new System.EventHandler(this.timerSlider_Tick);
-            // 
             // NewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,7 +96,6 @@
         private System.Windows.Forms.Timer timerForBall;
         private System.Windows.Forms.Timer timerCountdown;
         private System.Windows.Forms.Label lblCountdown;
-        private System.Windows.Forms.Timer timerSlider;
 
     }
 }

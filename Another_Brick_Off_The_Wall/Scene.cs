@@ -70,25 +70,41 @@ namespace Another_Brick_Off_The_Wall
 
             Ball.Move(); // the moving of the ball
             Ball.SliderCollider(Slider); // condition if ball touches with slider
+
+            TilesCollisions();
+
+
             if (Reward != null) // if there is reward it should move downwards 
             {
                 Reward.Move(Slider);
                 if (Reward.forDelete) Reward = null; // set the reward to null if it is below slider
             }
-            if (SliderToMove) // every second timer the slider moves if it should
-            {
+           // if (SliderToMove) // every second timer the slider moves if it should
+           // {
                 MoveSlider();
-            }
-            if (Slider.touchReward(Reward))
+           // }
+            /*if (Slider.touchReward(Reward))
             {
                 RewardCounter = 2000;
                 RewardTheUser(Reward.Rwd,true);
-            }
+            }*/
             SliderToMove = !SliderToMove; // change the turn of slider whether it should move
         }
 
+        private void TilesCollisions()
+        {
+            for (int i = Tiles.Count - 1; i >= 0; i--)
+            {
+                if(Ball.collides(Tiles[i]))
+                {
+                    Tiles.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
         // method for getting rewards
-        private void RewardTheUser(Rewards reward,bool ok)
+        private void RewardTheUser(Rewards reward, bool ok)
         {
             int Unit = UNIT;
             int Speed = 2;

@@ -54,14 +54,7 @@ namespace Another_Brick_Off_The_Wall
 
         private void timerForBall_Tick(object sender, EventArgs e)
         {
-            Scene.Ball.Move();
-            Scene.Ball.SliderCollider(slider);
-            /*reward.Move(slider);
-            if (slider.touchReward(reward))
-            {
-                reward.X = 0;
-                reward.Y = 0;
-            }*/
+            Scene.TimerTick();
             Invalidate(true);
         }
 
@@ -97,15 +90,25 @@ namespace Another_Brick_Off_The_Wall
 
         private void NewGame_KeyUp(object sender, KeyEventArgs e)
         {
-            Scene.MoveLeftSlider = Scene.MoveRightSlider = false;
+            if (e.KeyCode == Keys.Left)
+            {
+                Scene.MoveLeftSlider = false;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                Scene.MoveRightSlider = false;
+            }
 
         }
 
-        private void timerSlider_Tick(object sender, EventArgs e)
+       /* private void timerSlider_Tick(object sender, EventArgs e)
         {
+            //MessageBox.Show("Hello");
             Scene.MoveSlider();
             Invalidate(true);
-        }
+        }*/
+
+       
 
 
 

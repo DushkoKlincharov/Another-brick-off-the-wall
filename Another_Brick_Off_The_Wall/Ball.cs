@@ -22,7 +22,7 @@ namespace Another_Brick_Off_The_Wall
 
         private float SpeedX, SpeedY;
 
-        private static int delta = 3;
+        private static int delta = 5;
         private static int corner = 7;
 
         public Ball(PictureBox bounder, Level.BallSpeeds speed)
