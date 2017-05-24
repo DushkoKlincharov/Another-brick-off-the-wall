@@ -27,11 +27,13 @@ namespace Another_Brick_Off_The_Wall
             countdown = 3;
             DoubleBuffered = true;
             this.BackgroundImage = Resources.newGame_window_background;
+            pbPoints.Image = Resources.coin;
+            pbLives.Image = Resources.heart;
+            pbTime.Image = Resources.time;
         }
 
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
         {
-
             // lblCountdown.BackColor = Color.SlateGray;
             lblCountdown.Text = countdown.ToString();
             Scene.Draw(e.Graphics);
@@ -85,20 +87,5 @@ namespace Another_Brick_Off_The_Wall
             }
 
         }
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

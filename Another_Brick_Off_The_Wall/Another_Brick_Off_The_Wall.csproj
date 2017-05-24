@@ -141,7 +141,6 @@
   <ItemGroup>
     <None Include="Resources\MediumTile %281%29.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\FinkiTile.png" />
   </ItemGroup>
@@ -150,6 +149,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FinkiTile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heartss.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\live %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
