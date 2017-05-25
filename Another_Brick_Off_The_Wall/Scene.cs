@@ -37,7 +37,7 @@ namespace Another_Brick_Off_The_Wall
         {
             PictureBox = picBox;
             Level = lvl;
-            Ball = new Ball(PictureBox, Level.BallSpeed);
+            Ball = new Ball(PictureBox, Level);
             Slider = new Slider(Level.SliderLength);
             Tiles = Level.getTiles();
             Reward = null;
@@ -70,6 +70,8 @@ namespace Another_Brick_Off_The_Wall
 
             Ball.Move(); // the moving of the ball
             Ball.SliderCollider(Slider); // condition if ball touches with slider
+            if (Ball.OutOfBounds(Slider))
+                Ball = new Ball(PictureBox, new Level3());
 
             TilesCollisions();
 

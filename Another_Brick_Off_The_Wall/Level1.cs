@@ -12,6 +12,7 @@ namespace Another_Brick_Off_The_Wall
             BallSpeed = BallSpeeds.SLOW;
             SliderLength = SliderLengths.LARGE;
             Tiles = makeGrid();
+            Delta = Deltas.EASY;
         }
 
         public List<Tile> makeGrid()

@@ -22,18 +22,20 @@ namespace Another_Brick_Off_The_Wall
 
         private float SpeedX, SpeedY;
 
-        private static int delta = 4;  // if the distance between two objects is less than delta then they collide
-        private static float corner = 6; // the corner of the tiles part
-
-        public Ball(PictureBox bounder, Level.BallSpeeds speed)
+        private int delta;  // if the distance between two objects is less than delta then they collide
+        private static float corner = 10; // the corner of the tiles part
+        private static int sliderDelta = 3;
+        public Ball(PictureBox bounder, Level lvl)
         {
             Bounder = bounder;
             X = (int)(bounder.Width / 2 - Radius);  // upper-left
             Y = bounder.Height - 250;
-            Speed = (int)speed;
+            Speed = (int)lvl.BallSpeed;
+            //Angle = -(float)(Math.PI * 13 / 48);
             Angle = (float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
             SpeedX = (float)Math.Cos(Angle) * Speed;
             SpeedY = (float)Math.Sin(Angle) * Speed;
+            delta = (int)lvl.Delta;
         }
 
         public void Draw(Graphics g)
@@ -62,7 +64,7 @@ namespace Another_Brick_Off_The_Wall
 
         public bool SliderCollider(Slider slider)
         {
-            if (Math.Abs(Y + Radius * 2 - slider.Y) < delta)
+            if (Math.Abs(Y + Radius * 2 - slider.Y) < Ball.sliderDelta)
             {
                 if (slider.X - corner <= X + Radius && X + Radius <= slider.X + corner * 3)
                 {
@@ -89,7 +91,7 @@ namespace Another_Brick_Off_The_Wall
 
         public bool OutOfBounds(Slider slider)
         {
-            return Y + Radius * 2 > slider.Y;
+            return Y > slider.Y + Radius;
         }
 
         internal bool collides(Tile tile)
@@ -138,87 +140,45 @@ namespace Another_Brick_Off_The_Wall
 
         private bool collideDownLeft(Tile tile)
         {
-            if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
-            {
-                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner * 2;
-            }
-            if (Math.Abs(X + Radius * 2 - tile.X) < delta)
-            {
-                return tile.Y + Tile.HEIGHT <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT + corner;
-            }
-            return false;
+            return Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta && Math.Abs(X + Radius - tile.X) <= corner * 2
+                || Math.Abs(X + Radius * 2 - tile.X) < delta && Math.Abs(Y + Radius - tile.Y - Tile.HEIGHT) <= corner;
         }
         private bool collideDown(Tile tile)
         {
-            if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
-            {
-                return tile.X + corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width - corner * 2;
-            }
-            return false;
+            return Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta && tile.X + corner * 2 <= X + Radius
+                && X + Radius <= tile.X + tile.Width - corner * 2;
         }
         private bool collideDownRight(Tile tile)
         {
-            if (Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta)
-            {
-                return tile.X + tile.Width - corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
-            }
-            if (Math.Abs(X - tile.X - tile.Width) < delta)
-            {
-                return tile.Y + Tile.HEIGHT <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT + corner;
-            }
-            return false;
+            return Math.Abs(Y - tile.Y - Tile.HEIGHT) < delta && Math.Abs(X + Radius - tile.X - tile.Width) <= corner * 2
+                || Math.Abs(X - tile.X - tile.Width) < delta && Math.Abs(Y + Radius - tile.Y - Tile.HEIGHT) <= corner;
         }
         private bool collideRight(Tile tile)
         {
-            if (Math.Abs(X - tile.X - tile.Width) < delta)
-            {
-                return tile.Y <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT;
-            }
-            return false;
+            return Math.Abs(X - tile.X - tile.Width) < delta && tile.Y + corner < Y + Radius
+                && Y + Radius <= tile.Y + Tile.HEIGHT - corner;
         }
 
         private bool collideLeft(Tile tile)
         {
-            if (Math.Abs(X + Radius * 2 - tile.X) < delta)
-            {
-                return tile.Y <= Y + Radius && Y + Radius <= tile.Y + Tile.HEIGHT;
-            }
-            return false;
+            return Math.Abs(X + Radius * 2 - tile.X) < delta && tile.Y + corner <= Y + Radius &&
+                Y + Radius <= tile.Y + Tile.HEIGHT - corner;
         }
         private bool collideUpLeft(Tile tile)
         {
-            if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
-            {
-                return tile.X - corner <= X + Radius && X + Radius <= tile.X + corner * 2;
-            }
-            if (Math.Abs(X + Radius * 2 - tile.X) < delta)
-            {
-                return tile.Y - corner <= Y + Radius && Y + Radius <= tile.Y;
-            }
-            return false;
+            return Math.Abs(X + Radius * 2 - tile.X) < delta && Math.Abs(tile.Y - Y - Radius) <= corner
+                || Math.Abs(Y + Radius * 2 - tile.Y) < delta && Math.Abs(X + Radius - tile.X) <= corner * 2;
         }
         private bool collideUp(Tile tile)
         {
-            if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
-            {
-                return tile.X + corner*2 <= X + Radius && X + Radius <= tile.X + tile.Width - corner * 2;
-
-            }
-            return false;
+            return Math.Abs(Y + Radius * 2 - tile.Y) < delta && tile.X + corner * 2 <= X + Radius
+                && X + Radius <= tile.X + tile.Width - corner * 2;
         }
          
         private bool collideUpRight(Tile tile)
         {
-            if (Math.Abs(Y + Radius * 2 - tile.Y) < delta)
-            {
-                return tile.X + tile.Width - corner * 2 <= X + Radius && X + Radius <= tile.X + tile.Width + corner;
-
-            }
-            if (Math.Abs(X - tile.X - tile.Width) < delta)
-            {
-                return tile.Y - corner <= Y + Radius && Y + Radius <= tile.Y;
-            }
-            return false;
+            return Math.Abs(Y + Radius * 2 - tile.Y) < delta && Math.Abs(X + Radius - tile.X - tile.Width) <= corner * 2
+                || Math.Abs(X - tile.X - tile.Width) < delta && Math.Abs(tile.Y - Y - Radius) <= corner;
         }
 
         
