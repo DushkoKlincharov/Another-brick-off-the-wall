@@ -23,8 +23,9 @@ namespace Another_Brick_Off_The_Wall
 
         public bool forDelete { get; set; }
         public Rewards Rwd { get; set; }
+        public bool toNull { get; set; }
 
-        public static Color[] COLORS = { Color.Red, Color.Green, Color.BurlyWood, Color.Blue, Color.Chocolate };
+        public static Color[] COLORS = { Color.Red, Color.Blue, Color.White};
         public Color Color { get; set; }
 
         Random rand = new Random();
@@ -33,15 +34,14 @@ namespace Another_Brick_Off_The_Wall
         {
             X = x;
             Y = y;
-            if (isLife) Color = COLORS[4];
+            if (isLife) Color = COLORS[2];
             else
-                Color = COLORS[rand.Next(4)];
+                Color = COLORS[rand.Next(2)];
             forDelete = false;
+            toNull = false;
             if (Color == COLORS[0]) Rwd = Rewards.BIGGER_SLIDER;
-            else if (Color == COLORS[1]) Rwd = Rewards.SLOWER_SPEED;
-            else if (Color == COLORS[2]) Rwd = Rewards.FASTER_SPEED;
-            else if (Color == COLORS[3]) Rwd = Rewards.SLOWER_SPEED;
-            else if (Color == COLORS[4]) Rwd = Rewards.LIFE;
+            else if (Color == COLORS[1]) Rwd = Rewards.SMALLER_SLIDER;
+            else if (Color == COLORS[2]) Rwd = Rewards.LIFE;
         }
 
         public void Draw(Graphics g)
@@ -58,8 +58,8 @@ namespace Another_Brick_Off_The_Wall
         {
             Y += 1;
 
-            if (Y + SIDE >= slider.Y)
-                forDelete = true;
+            if (Y + SIDE >= slider.Y + Slider.HEIGHT)
+                toNull = true;
         }
 
                                                   

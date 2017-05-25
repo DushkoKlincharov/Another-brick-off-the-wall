@@ -32,7 +32,7 @@ namespace Another_Brick_Off_The_Wall
             Y = bounder.Height - 250;
             Speed = (int)lvl.BallSpeed;
             //Angle = -(float)(Math.PI * 13 / 48);
-            Angle = (float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
+            Angle = -(float)(Math.PI * 1 / 4 + firstDirection.NextDouble() * Math.PI * 1 / 2);
             SpeedX = (float)Math.Cos(Angle) * Speed;
             SpeedY = (float)Math.Sin(Angle) * Speed;
             delta = (int)lvl.Delta;
@@ -180,9 +180,6 @@ namespace Another_Brick_Off_The_Wall
             return Math.Abs(Y + Radius * 2 - tile.Y) < delta && Math.Abs(X + Radius - tile.X - tile.Width) <= corner * 2
                 || Math.Abs(X - tile.X - tile.Width) < delta && Math.Abs(tile.Y - Y - Radius) <= corner;
         }
-
-        
-
         
     }
 }

@@ -16,6 +16,8 @@ namespace Another_Brick_Off_The_Wall
         public Level Level { get; set; }
         public PictureBox PictureBox { get; set; }
         public int countdown;
+        public int secondsCounter;
+        public int seconds;
 
         public NewGame(Level level)
         {
@@ -25,11 +27,16 @@ namespace Another_Brick_Off_The_Wall
             Scene = new Scene(Level, PictureBox);
             lblCountdown.Location = new Point(417, 230);
             countdown = 3;
+            seconds = 0;
+            secondsCounter = 0;
             DoubleBuffered = true;
             this.BackgroundImage = Resources.newGame_window_background;
             pbPoints.Image = Resources.coin;
+            lblPoints.Text = string.Format("{0}", Scene.Points);
             pbLives.Image = Resources.heart;
+            lblLives.Text = string.Format("{0}",Scene.Lives);
             pbTime.Image = Resources.time;
+            lblTime.Text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
         }
 
         private void pbNewGame_Paint(object sender, PaintEventArgs e)
@@ -41,7 +48,20 @@ namespace Another_Brick_Off_The_Wall
 
         private void timerForBall_Tick(object sender, EventArgs e)
         {
+            secondsCounter++;
+            if (secondsCounter == 67)
+            {
+                secondsCounter = 0;
+                ++seconds;
+            }
             Scene.TimerTick();
+            if (Scene.loseLife)
+            {
+                beginCountdown();
+            }
+            lblLives.Text = string.Format("{0}", Scene.Lives);
+            lblPoints.Text = string.Format("{0}", Scene.Points);
+            lblTime.Text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
             Invalidate(true);
         }
 
@@ -59,6 +79,15 @@ namespace Another_Brick_Off_The_Wall
 
             }
             Invalidate(true);
+        }
+
+        private void beginCountdown()
+        {
+            timerForBall.Stop();
+            countdown = 3;
+            lblCountdown.Show();
+            Scene.NewGame();
+            timerCountdown.Start();
         }
 
         // Slider moving methods

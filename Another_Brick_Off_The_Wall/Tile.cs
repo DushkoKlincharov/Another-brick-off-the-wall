@@ -22,6 +22,7 @@ namespace Another_Brick_Off_The_Wall
         public bool isAlive { get; set; }
 
         public abstract void Draw(Graphics g);
+        public abstract int getPoints(Level lvl);
 
         public Tile()
         {

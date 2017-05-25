@@ -25,12 +25,17 @@ namespace Another_Brick_Off_The_Wall
         // Variables used for sending arguments to the objects
         public Level Level { get; set; }
         public PictureBox PictureBox { get; set; }
+        public Random Random = new Random();
 
         // helping variables in the scene
         public bool MoveLeftSlider { get; set; }
         public bool MoveRightSlider { get; set; }
-        private bool SliderToMove;
         public int RewardCounter { get; set; }
+        public bool loseLife { get; set; }
+
+        // Lifes and points
+        public int Lives { get; set; }
+        public int Points { get; set; }
 
         // constructor of the scene
         public Scene(Level lvl, PictureBox picBox)
@@ -42,8 +47,10 @@ namespace Another_Brick_Off_The_Wall
             Tiles = Level.getTiles();
             Reward = null;
             MoveLeftSlider = MoveRightSlider = false;
-            SliderToMove = false;
             RewardCounter = 0;
+            Lives = 3;
+            Points = 0;
+            loseLife = false;
         }
 
         // draw method
@@ -53,7 +60,7 @@ namespace Another_Brick_Off_The_Wall
             {
                 tile.Draw(g);
             }
-            if (Reward != null) Reward.Draw(g); // if there is reward draw it
+            if (Reward!= null && !Reward.forDelete) Reward.Draw(g); // if there is reward draw it
             Ball.Draw(g); // draw the ball
             Slider.Draw(g); // draw the slider
         }
@@ -65,60 +72,90 @@ namespace Another_Brick_Off_The_Wall
             if (RewardCounter > 0)
             {
                 RewardCounter--;
-                if (RewardCounter == 0) RewardTheUser(Reward.Rwd, false);
+                if (RewardCounter == 0)
+                {
+                    RewardTheUser(Reward.Rwd, false);
+                }
             }
 
             Ball.Move(); // the moving of the ball
             Ball.SliderCollider(Slider); // condition if ball touches with slider
             if (Ball.OutOfBounds(Slider))
-                Ball = new Ball(PictureBox, new Level3());
-
-            TilesCollisions();
-
-
+                loseLife = true;
+            
+            MoveSlider(); // move the slider
+            TilesCollisions(); // check for collisions of the ball with tiles
             if (Reward != null) // if there is reward it should move downwards 
             {
                 Reward.Move(Slider);
-                if (Reward.forDelete) Reward = null; // set the reward to null if it is below slider
+                if (!Reward.forDelete && Slider.touchReward(Reward))
+                {  // if slider touches the reward get the reward
+                    RewardCounter = 350;
+                    RewardTheUser(Reward.Rwd, true);
+                    Reward.forDelete = true;
+                }
+                if (Reward.toNull && RewardCounter == 0) Reward = null;
             }
-           // if (SliderToMove) // every second timer the slider moves if it should
-           // {
-            MoveSlider();
-           // }
-            /*if (Slider.touchReward(Reward))
-            {
-                RewardCounter = 2000;
-                RewardTheUser(Reward.Rwd,true);
-            }*/
-            //SliderToMove = !SliderToMove; // change the turn of slider whether it should move
+            
         }
 
+        // method which is invoked every time life is lost
+        public void NewGame()
+        {
+            Lives--;
+            if (Lives == 0)
+                endGame();
+            Ball = new Ball(PictureBox, Level);
+            Slider = new Slider(Level.SliderLength);
+            Reward = null;
+            loseLife = false;
+        }
+
+        private void endGame()
+        {
+
+        }
+
+
+        // method to check if there is collision of the ball and tiles
         private bool TilesCollisions()
         {
             for (int i = Tiles.Count - 1; i >= 0; i--)
             {
                 if(Ball.collides(Tiles[i]))
                 {
-                    Tiles.RemoveAt(i);
+                    Points += Tiles[i].getPoints(Level);
+                    checkForReward(Tiles[i]);
+                    Tiles.RemoveAt(i);                  
                     return true;
                 }
             }
             return false;
         }
 
+        // method to check if there should fall reward after breaking a tile
+        private void checkForReward(Tile tile)
+        {
+            if (Reward != null) return;
+            int number = Random.Next(1000);
+            if (number % 20 == 0)
+                Reward = new Reward(tile.X + tile.Width/2, tile.Y + Tile.HEIGHT, true);
+            else if (number % 10 == 0)
+                Reward = new Reward(tile.X + tile.Width / 2, tile.Y + Tile.HEIGHT, false);
+        }
+
         // method for getting rewards
         private void RewardTheUser(Rewards reward, bool ok)
         {
             int Unit = UNIT;
-            int Speed = 2;
             if (!ok)
             {
                 Unit = -Unit;
-                Speed = -Speed;
                 Reward = null;
             }
             if (reward == Rewards.BIGGER_SLIDER) Slider.ChangeLength(Unit);
-            else if (reward == Rewards.SMALLER_SLIDER) Slider.ChangeLength(-Unit);
+            else if (reward == Rewards.SMALLER_SLIDER) Slider.ChangeLength(-1 *Unit);
+            else if (reward == Rewards.LIFE) Lives++;
         }
 
 
@@ -129,6 +166,6 @@ namespace Another_Brick_Off_The_Wall
             if (MoveRightSlider) Slider.Move(UNIT);
             //Slider.Move(10);
         }
-        
+
     }
 }

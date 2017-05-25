@@ -22,5 +22,10 @@ namespace Another_Brick_Off_The_Wall
         {
             g.DrawImage(Image, new Rectangle((int)X, (int)Y, Width, HEIGHT));
         }
+
+        public override int getPoints(Level lvl)
+        {
+            return 165; 
+        }
     }
 }
