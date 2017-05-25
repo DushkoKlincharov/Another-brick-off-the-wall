@@ -107,7 +107,6 @@ namespace Another_Brick_Off_The_Wall
                 endGame();
             Ball = new Ball(PictureBox, Level);
             Slider = new Slider(Level.SliderLength);
-            Reward = null;
             loseLife = false;
         }
 
