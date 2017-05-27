@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblNewGame = new System.Windows.Forms.Label();
-            this.lblContinueLastGame = new System.Windows.Forms.Label();
             this.lblHighScores = new System.Windows.Forms.Label();
             this.lblAbout = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
@@ -37,6 +36,7 @@
             this.radioBtnMedium = new System.Windows.Forms.RadioButton();
             this.radioBtnHard = new System.Windows.Forms.RadioButton();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNewGame
@@ -47,26 +47,12 @@
             this.lblNewGame.ForeColor = System.Drawing.Color.White;
             this.lblNewGame.Location = new System.Drawing.Point(300, 240);
             this.lblNewGame.Name = "lblNewGame";
-            this.lblNewGame.Size = new System.Drawing.Size(131, 36);
+            this.lblNewGame.Size = new System.Drawing.Size(67, 36);
             this.lblNewGame.TabIndex = 9;
-            this.lblNewGame.Text = "New Game";
+            this.lblNewGame.Text = "Play!";
             this.lblNewGame.Click += new System.EventHandler(this.lblNewGame_Click);
             this.lblNewGame.MouseLeave += new System.EventHandler(this.lblNewGame_MouseLeave);
             this.lblNewGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblNewGame_MouseMove);
-            // 
-            // lblContinueLastGame
-            // 
-            this.lblContinueLastGame.AutoSize = true;
-            this.lblContinueLastGame.BackColor = System.Drawing.Color.Transparent;
-            this.lblContinueLastGame.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContinueLastGame.ForeColor = System.Drawing.Color.White;
-            this.lblContinueLastGame.Location = new System.Drawing.Point(300, 340);
-            this.lblContinueLastGame.Name = "lblContinueLastGame";
-            this.lblContinueLastGame.Size = new System.Drawing.Size(231, 36);
-            this.lblContinueLastGame.TabIndex = 10;
-            this.lblContinueLastGame.Text = "Continue Last Game";
-            this.lblContinueLastGame.MouseLeave += new System.EventHandler(this.lblContinueLastGame_MouseLeave);
-            this.lblContinueLastGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblContinueLastGame_MouseMove);
             // 
             // lblHighScores
             // 
@@ -119,7 +105,7 @@
             this.radioBtnEasy.Checked = true;
             this.radioBtnEasy.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnEasy.ForeColor = System.Drawing.Color.White;
-            this.radioBtnEasy.Location = new System.Drawing.Point(300, 290);
+            this.radioBtnEasy.Location = new System.Drawing.Point(200, 340);
             this.radioBtnEasy.Name = "radioBtnEasy";
             this.radioBtnEasy.Size = new System.Drawing.Size(80, 40);
             this.radioBtnEasy.TabIndex = 14;
@@ -135,7 +121,7 @@
             this.radioBtnMedium.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnMedium.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnMedium.ForeColor = System.Drawing.Color.White;
-            this.radioBtnMedium.Location = new System.Drawing.Point(390, 290);
+            this.radioBtnMedium.Location = new System.Drawing.Point(290, 340);
             this.radioBtnMedium.Name = "radioBtnMedium";
             this.radioBtnMedium.Size = new System.Drawing.Size(119, 40);
             this.radioBtnMedium.TabIndex = 15;
@@ -150,7 +136,7 @@
             this.radioBtnHard.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnHard.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnHard.ForeColor = System.Drawing.Color.White;
-            this.radioBtnHard.Location = new System.Drawing.Point(520, 290);
+            this.radioBtnHard.Location = new System.Drawing.Point(420, 340);
             this.radioBtnHard.Name = "radioBtnHard";
             this.radioBtnHard.Size = new System.Drawing.Size(87, 40);
             this.radioBtnHard.TabIndex = 16;
@@ -171,6 +157,18 @@
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "Another brick off the wall";
             // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lblLevel.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.Color.White;
+            this.lblLevel.Location = new System.Drawing.Point(290, 320);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(127, 28);
+            this.lblLevel.TabIndex = 18;
+            this.lblLevel.Text = "Choose a level:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +178,7 @@
             this.BackgroundImage = global::Another_Brick_Off_The_Wall.Properties.Resources.newGame_window_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.radioBtnHard);
             this.Controls.Add(this.radioBtnMedium);
@@ -187,7 +186,6 @@
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.lblHighScores);
-            this.Controls.Add(this.lblContinueLastGame);
             this.Controls.Add(this.lblNewGame);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -204,7 +202,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblNewGame;
-        private System.Windows.Forms.Label lblContinueLastGame;
         private System.Windows.Forms.Label lblHighScores;
         private System.Windows.Forms.Label lblAbout;
         private System.Windows.Forms.Label lblExit;
@@ -212,6 +209,7 @@
         private System.Windows.Forms.RadioButton radioBtnMedium;
         private System.Windows.Forms.RadioButton radioBtnHard;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblLevel;
     }
 }
 
