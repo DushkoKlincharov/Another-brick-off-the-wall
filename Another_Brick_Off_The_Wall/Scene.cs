@@ -32,6 +32,7 @@ namespace Another_Brick_Off_The_Wall
         public bool MoveRightSlider { get; set; }
         public int RewardCounter { get; set; }
         public bool loseLife { get; set; }
+        public bool endGame { get; set; }
 
         // Lifes and points
         public int Lives { get; set; }
@@ -51,6 +52,7 @@ namespace Another_Brick_Off_The_Wall
             Lives = 3;
             Points = 0;
             loseLife = false;
+            endGame = false;
         }
 
         // draw method
@@ -104,13 +106,16 @@ namespace Another_Brick_Off_The_Wall
         {
             Lives--;
             if (Lives == 0)
-                endGame();
+                endGame = true;
             Ball = new Ball(PictureBox, Level);
             Slider = new Slider(Level.SliderLength);
             loseLife = false;
+            if (Reward != null) RewardTheUser(Reward.Rwd, false);
+            Reward = null;
+            RewardCounter = 0;
         }
 
-        private void endGame()
+        private void EndGame()
         {
 
         }
@@ -119,6 +124,7 @@ namespace Another_Brick_Off_The_Wall
         // method to check if there is collision of the ball and tiles
         private bool TilesCollisions()
         {
+            if (Tiles.Count == 0) endGame = true;
             for (int i = Tiles.Count - 1; i >= 0; i--)
             {
                 if(Ball.collides(Tiles[i]))
@@ -137,7 +143,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Reward != null) return;
             int number = Random.Next(1000);
-            if (number % 20 == 0)
+            if (number % 1 == 0)
                 Reward = new Reward(tile.X + tile.Width/2, tile.Y + Tile.HEIGHT, true);
             else if (number % 10 == 0)
                 Reward = new Reward(tile.X + tile.Width / 2, tile.Y + Tile.HEIGHT, false);
@@ -154,7 +160,7 @@ namespace Another_Brick_Off_The_Wall
             }
             if (reward == Rewards.BIGGER_SLIDER) Slider.ChangeLength(Unit);
             else if (reward == Rewards.SMALLER_SLIDER) Slider.ChangeLength(-1 *Unit);
-            else if (reward == Rewards.LIFE) Lives++;
+            else if (ok && reward == Rewards.LIFE) Lives++;
         }
 
 

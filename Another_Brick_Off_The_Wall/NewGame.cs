@@ -59,6 +59,10 @@ namespace Another_Brick_Off_The_Wall
             {
                 beginCountdown();
             }
+            if (Scene.endGame)
+            {
+
+            }
             lblLives.Text = string.Format("{0}", Scene.Lives);
             lblPoints.Text = string.Format("{0}", Scene.Points);
             lblTime.Text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
