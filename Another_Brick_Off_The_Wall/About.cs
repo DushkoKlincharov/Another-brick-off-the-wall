@@ -16,5 +16,22 @@ namespace Another_Brick_Off_The_Wall
             InitializeComponent();
         }
 
+        private void lblOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblOk_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblOk.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblOk_MouseLeave(object sender, EventArgs e)
+        {
+            lblOk.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
     }
 }
