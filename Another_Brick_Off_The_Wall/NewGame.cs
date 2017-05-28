@@ -95,10 +95,12 @@ namespace Another_Brick_Off_The_Wall
             Scene.EndGame(seconds);
             string Name = "";
             EnterName enterName = new EnterName();
+            this.AddOwnedForm(enterName);
             if (enterName.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Name = enterName.PlayerName;
             }
+            this.RemoveOwnedForm(enterName);
             Top5.Add(Name, Scene.Points);
             Top5.saveScores();
             this.Close();

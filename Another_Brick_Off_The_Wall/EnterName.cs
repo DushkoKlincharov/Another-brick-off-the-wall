@@ -18,10 +18,22 @@ namespace Another_Brick_Off_The_Wall
             InitializeComponent();
         }
 
-        private void btnEnter_Click(object sender, EventArgs e)
+        private void lblEnter_Click(object sender, EventArgs e)
         {
             PlayerName = tbEnterName.Text;
             DialogResult = DialogResult.OK;
+        }
+
+        private void lblEnter_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblEnter.ForeColor = Color.SlateGray;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblEnter_MouseLeave(object sender, EventArgs e)
+        {
+            lblEnter.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
         }
     }
 }
