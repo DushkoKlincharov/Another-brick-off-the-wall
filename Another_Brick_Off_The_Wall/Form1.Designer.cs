@@ -80,6 +80,7 @@
             this.lblAbout.Size = new System.Drawing.Size(78, 36);
             this.lblAbout.TabIndex = 12;
             this.lblAbout.Text = "About";
+            this.lblAbout.Click += new System.EventHandler(this.lblAbout_Click);
             this.lblAbout.MouseLeave += new System.EventHandler(this.lblAbout_MouseLeave);
             this.lblAbout.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblAbout_MouseMove);
             // 

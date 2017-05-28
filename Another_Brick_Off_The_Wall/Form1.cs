@@ -191,5 +191,13 @@ namespace Another_Brick_Off_The_Wall
             this.ResizeLabels();
             this.ResizeRadioButtons();
         }
+
+        private void lblAbout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            this.AddOwnedForm(about);
+            about.ShowDialog();
+            this.RemoveOwnedForm(about);
+        }
     }
 }
