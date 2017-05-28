@@ -38,11 +38,6 @@ namespace Another_Brick_Off_The_Wall
             this.Cursor = Cursors.Default;
         }
 
-        private void EnterName_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void tbEnterName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

@@ -97,7 +97,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Enter your name";
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EnterName_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
