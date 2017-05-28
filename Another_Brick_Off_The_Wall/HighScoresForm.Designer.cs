@@ -35,17 +35,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
+            this.lblPlayer3 = new System.Windows.Forms.Label();
+            this.lblPlayer4 = new System.Windows.Forms.Label();
+            this.lblPlayer5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblScore1 = new System.Windows.Forms.Label();
+            this.lblScore2 = new System.Windows.Forms.Label();
+            this.lblScore3 = new System.Windows.Forms.Label();
+            this.lblScore4 = new System.Windows.Forms.Label();
+            this.lblScore5 = new System.Windows.Forms.Label();
             this.labelOk = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -126,60 +126,60 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Player name";
             // 
-            // label8
+            // lblPlayer1
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(55, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Player 1";
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer1.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer1.Location = new System.Drawing.Point(55, 45);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer1.TabIndex = 7;
+            this.lblPlayer1.Text = "Player 1";
             // 
-            // label9
+            // lblPlayer2
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(55, 75);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Player 2";
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer2.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer2.Location = new System.Drawing.Point(55, 75);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer2.TabIndex = 8;
+            this.lblPlayer2.Text = "Player 2";
             // 
-            // label10
+            // lblPlayer3
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(55, 105);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Player 3";
+            this.lblPlayer3.AutoSize = true;
+            this.lblPlayer3.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer3.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer3.Location = new System.Drawing.Point(55, 105);
+            this.lblPlayer3.Name = "lblPlayer3";
+            this.lblPlayer3.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer3.TabIndex = 9;
+            this.lblPlayer3.Text = "Player 3";
             // 
-            // label11
+            // lblPlayer4
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(55, 135);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Player 4";
+            this.lblPlayer4.AutoSize = true;
+            this.lblPlayer4.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer4.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer4.Location = new System.Drawing.Point(55, 135);
+            this.lblPlayer4.Name = "lblPlayer4";
+            this.lblPlayer4.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer4.TabIndex = 10;
+            this.lblPlayer4.Text = "Player 4";
             // 
-            // label12
+            // lblPlayer5
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(55, 165);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Player 5";
+            this.lblPlayer5.AutoSize = true;
+            this.lblPlayer5.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer5.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer5.Location = new System.Drawing.Point(55, 165);
+            this.lblPlayer5.Name = "lblPlayer5";
+            this.lblPlayer5.Size = new System.Drawing.Size(45, 13);
+            this.lblPlayer5.TabIndex = 11;
+            this.lblPlayer5.Text = "Player 5";
             // 
             // label13
             // 
@@ -192,60 +192,60 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Score";
             // 
-            // label14
+            // lblScore1
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(195, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 13);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "-Infinity";
+            this.lblScore1.AutoSize = true;
+            this.lblScore1.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore1.ForeColor = System.Drawing.Color.White;
+            this.lblScore1.Location = new System.Drawing.Point(195, 45);
+            this.lblScore1.Name = "lblScore1";
+            this.lblScore1.Size = new System.Drawing.Size(40, 13);
+            this.lblScore1.TabIndex = 13;
+            this.lblScore1.Text = "-Infinity";
             // 
-            // label15
+            // lblScore2
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(195, 75);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "-Infinity";
+            this.lblScore2.AutoSize = true;
+            this.lblScore2.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore2.ForeColor = System.Drawing.Color.White;
+            this.lblScore2.Location = new System.Drawing.Point(195, 75);
+            this.lblScore2.Name = "lblScore2";
+            this.lblScore2.Size = new System.Drawing.Size(40, 13);
+            this.lblScore2.TabIndex = 14;
+            this.lblScore2.Text = "-Infinity";
             // 
-            // label16
+            // lblScore3
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(195, 105);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "-Infinity";
+            this.lblScore3.AutoSize = true;
+            this.lblScore3.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore3.ForeColor = System.Drawing.Color.White;
+            this.lblScore3.Location = new System.Drawing.Point(195, 105);
+            this.lblScore3.Name = "lblScore3";
+            this.lblScore3.Size = new System.Drawing.Size(40, 13);
+            this.lblScore3.TabIndex = 15;
+            this.lblScore3.Text = "-Infinity";
             // 
-            // label17
+            // lblScore4
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(195, 135);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 13);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "-Infinity";
+            this.lblScore4.AutoSize = true;
+            this.lblScore4.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore4.ForeColor = System.Drawing.Color.White;
+            this.lblScore4.Location = new System.Drawing.Point(195, 135);
+            this.lblScore4.Name = "lblScore4";
+            this.lblScore4.Size = new System.Drawing.Size(40, 13);
+            this.lblScore4.TabIndex = 16;
+            this.lblScore4.Text = "-Infinity";
             // 
-            // label18
+            // lblScore5
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(195, 165);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 13);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "-Infinity";
+            this.lblScore5.AutoSize = true;
+            this.lblScore5.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore5.ForeColor = System.Drawing.Color.White;
+            this.lblScore5.Location = new System.Drawing.Point(195, 165);
+            this.lblScore5.Name = "lblScore5";
+            this.lblScore5.Size = new System.Drawing.Size(40, 13);
+            this.lblScore5.TabIndex = 17;
+            this.lblScore5.Text = "-Infinity";
             // 
             // labelOk
             // 
@@ -271,17 +271,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(284, 230);
             this.Controls.Add(this.labelOk);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblScore5);
+            this.Controls.Add(this.lblScore4);
+            this.Controls.Add(this.lblScore3);
+            this.Controls.Add(this.lblScore2);
+            this.Controls.Add(this.lblScore1);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblPlayer5);
+            this.Controls.Add(this.lblPlayer4);
+            this.Controls.Add(this.lblPlayer3);
+            this.Controls.Add(this.lblPlayer2);
+            this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -307,17 +307,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblPlayer1;
+        private System.Windows.Forms.Label lblPlayer2;
+        private System.Windows.Forms.Label lblPlayer3;
+        private System.Windows.Forms.Label lblPlayer4;
+        private System.Windows.Forms.Label lblPlayer5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblScore1;
+        private System.Windows.Forms.Label lblScore2;
+        private System.Windows.Forms.Label lblScore3;
+        private System.Windows.Forms.Label lblScore4;
+        private System.Windows.Forms.Label lblScore5;
         private System.Windows.Forms.Label labelOk;
 
     }

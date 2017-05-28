@@ -30,14 +30,14 @@ namespace Another_Brick_Off_The_Wall
                 }
                 if (i % 3 == 1)
                 {
-                    for (int j = 0; j < Scene.WIDTH; j += 10)
+                    for (int j = 0; (j + 10) * Scene.UNIT <= Scene.WIDTH; j += 10)
                     {
                         tiles.Add(new MediumTile(j * Scene.UNIT, i * Scene.UNIT * 3));
                     }
                 }
                 if (i % 3 == 2)
                 {
-                    for (int j = 0; j < Scene.WIDTH; j += 8)
+                    for (int j = 0; (j + 8) * Scene.UNIT <= Scene.WIDTH; j += 8)
                     {
                         tiles.Add(new SmallTile(j * Scene.UNIT, i * Scene.UNIT * 3));
                     }

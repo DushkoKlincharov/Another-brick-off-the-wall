@@ -61,7 +61,7 @@ namespace Another_Brick_Off_The_Wall
             }
             if (Scene.endGame)
             {
-
+                EndGame();
             }
             lblLives.Text = string.Format("{0}", Scene.Lives);
             lblPoints.Text = string.Format("{0}", Scene.Points);
@@ -85,12 +85,36 @@ namespace Another_Brick_Off_The_Wall
             Invalidate(true);
         }
 
+        private void EndGame()
+        {
+            timerForBall.Stop();
+            lblLives.Text = string.Format("{0}", Scene.Lives);
+            lblPoints.Text = string.Format("{0}", Scene.Points);
+            lblTime.Text = string.Format("{0:00}:{1:00}", seconds / 60, seconds % 60);
+            Invalidate(true);
+            Scene.EndGame(seconds);
+            string Name = "";
+            EnterName enterName = new EnterName();
+            if (enterName.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Name = enterName.PlayerName;
+            }
+            Top5.Add(Name, Scene.Points);
+            Top5.saveScores();
+            this.Close();
+        }
+
         private void beginCountdown()
         {
             timerForBall.Stop();
             countdown = 3;
-            lblCountdown.Show();
             Scene.NewGame();
+            if (Scene.endGame)
+            {
+                EndGame();
+                return;
+            }
+            lblCountdown.Show();
             timerCountdown.Start();
         }
 

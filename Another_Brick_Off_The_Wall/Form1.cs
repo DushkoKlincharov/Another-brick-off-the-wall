@@ -26,6 +26,7 @@ namespace Another_Brick_Off_The_Wall
         public Form1()
         {
             InitializeComponent();
+            Top5.startScores();
         }
 
         private void lblNewGame_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace Another_Brick_Off_The_Wall
 
         private void lblHighScores_Click(object sender, EventArgs e)
         {
-            HighScoresForm hsf = new HighScoresForm();
+            HighScoresForm hsf = new HighScoresForm(Top5.Top5Scores);
             this.AddOwnedForm(hsf);
             hsf.ShowDialog();
             this.RemoveOwnedForm(hsf);

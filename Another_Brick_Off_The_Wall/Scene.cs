@@ -115,9 +115,14 @@ namespace Another_Brick_Off_The_Wall
             RewardCounter = 0;
         }
 
-        private void EndGame()
+        public void EndGame(int seconds)
         {
-
+            int bonusTime = 180 - seconds;
+            int bonusPoints = 0;
+            if (bonusTime > 0)
+                bonusPoints = Lives * bonusTime * 2;
+            Points += bonusPoints;
+            endGame = false;
         }
 
 
