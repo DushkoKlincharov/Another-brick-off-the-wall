@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.tbEnterName = new System.Windows.Forms.TextBox();
             this.lblEnter = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,6 +60,7 @@
             this.tbEnterName.Size = new System.Drawing.Size(195, 34);
             this.tbEnterName.TabIndex = 1;
             this.tbEnterName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEnterName_KeyUp);
+            this.tbEnterName.Validating += new System.ComponentModel.CancelEventHandler(this.tbEnterName_Validating);
             // 
             // lblEnter
             // 
@@ -72,6 +76,10 @@
             this.lblEnter.Click += new System.EventHandler(this.lblEnter_Click);
             this.lblEnter.MouseLeave += new System.EventHandler(this.lblEnter_MouseLeave);
             this.lblEnter.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblEnter_MouseMove);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // EnterName
             // 
@@ -90,6 +98,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Enter your name";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EnterName_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +109,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbEnterName;
         private System.Windows.Forms.Label lblEnter;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

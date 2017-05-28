@@ -20,6 +20,8 @@ namespace Another_Brick_Off_The_Wall
 
         private void lblEnter_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+                return;
             PlayerName = tbEnterName.Text;
             DialogResult = DialogResult.OK;
         }
@@ -45,6 +47,12 @@ namespace Another_Brick_Off_The_Wall
         {
             if (e.KeyCode == Keys.Enter)
                 lblEnter_Click(null, null);
+        }
+
+        private void tbEnterName_Validating(object sender, CancelEventArgs e)
+        {
+            e.Cancel = tbEnterName.Text.Trim().Length == 0 ? true : false;
+            errorProvider.SetError(tbEnterName, e.Cancel ? "Внесете име" : "");
         }
     }
 }
