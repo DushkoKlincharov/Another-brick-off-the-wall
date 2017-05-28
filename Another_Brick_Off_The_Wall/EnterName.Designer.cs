@@ -56,6 +56,7 @@
             this.tbEnterName.Name = "tbEnterName";
             this.tbEnterName.Size = new System.Drawing.Size(195, 34);
             this.tbEnterName.TabIndex = 1;
+            this.tbEnterName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEnterName_KeyUp);
             // 
             // lblEnter
             // 
@@ -88,6 +89,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Enter your name";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EnterName_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,5 +35,16 @@ namespace Another_Brick_Off_The_Wall
             lblEnter.ForeColor = Color.White;
             this.Cursor = Cursors.Default;
         }
+
+        private void EnterName_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tbEnterName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                lblEnter_Click(null, null);
+        }
     }
 }
