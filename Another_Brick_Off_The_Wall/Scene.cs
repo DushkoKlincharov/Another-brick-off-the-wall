@@ -148,7 +148,7 @@ namespace Another_Brick_Off_The_Wall
         {
             if (Reward != null) return;
             int number = Random.Next(1000);
-            if (number % 1 == 0)
+            if (number % 20 == 0)
                 Reward = new Reward(tile.X + tile.Width/2, tile.Y + Tile.HEIGHT, true);
             else if (number % 10 == 0)
                 Reward = new Reward(tile.X + tile.Width / 2, tile.Y + Tile.HEIGHT, false);
